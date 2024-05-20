@@ -16,7 +16,7 @@ const questions = [
     type: "multiple",
     difficulty: "easy",
     question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -98,25 +98,39 @@ let userScore = 0;
 
 let questionNumber = 0;
 
+const answerRandomizer = (array) => {
+  for (let i = 0; i < array.length; i++) {
+    const randomNum = Math.floor(
+      Math.random() * array[i].incorrect_answers.length
+    );
+    const incorrectAnswers = array[i].incorrect_answers;
+    const currentQuestion = array[i];
+    const result = incorrectAnswers.toSpliced(
+      randomNum,
+      0,
+      currentQuestion.correct_answer
+    );
+    currentQuestion.incorrect_answers = result;
+  }
+};
+
 const questionGen = () => {
   const questionSpace = document.getElementById("domande");
   const answerSpace = document.getElementById("risposte");
+  questionSpace.innerHTML = "";
+  answerSpace.innerHTML = "";
   const questionH1 = document.createElement("h1");
   questionH1.innerText = questions[questionNumber].question;
   questionSpace.appendChild(questionH1);
-  const correct_answer = questions[questionNumber].correct_answer;
-  const correcBtn = document.createElement("button");
-  correcBtn.id = "answer0";
-  correcBtn.innerText = correct_answer;
-  answerSpace.appendChild(correcBtn);
   for (let i = 0; i < questions[questionNumber].incorrect_answers.length; i++) {
     const currentAnswer = questions[questionNumber].incorrect_answers[i];
     const answerBtn = document.createElement("button");
     answerBtn.innerText = currentAnswer;
-    answerBtn.id = "answer" + (i + 1);
+    answerBtn.id = "answer" + i;
     answerSpace.appendChild(answerBtn);
   }
   const currentQuestionSpace = document.getElementById("current-question");
+  currentQuestionSpace.innerHTML = "";
   const p = document.createElement("p");
   const pSpan = document.createElement("span");
   pSpan.innerText = " / 10";
@@ -126,4 +140,4 @@ const questionGen = () => {
   questionNumber++;
 };
 
-window.onload = questionGen();
+(window.onload = answerRandomizer(questions)), questionGen();
