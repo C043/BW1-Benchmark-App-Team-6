@@ -1,0 +1,30 @@
+body {
+  background-image: url(../images/bg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+#logo {
+  padding: 40px 70px;
+}
+
+img {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+h1 
+   {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+   font-size: 60px;
+    color: white;
+    font-style: normal;
+  }
+}
+button {
+}
+p {
+}
+.button {
+}
