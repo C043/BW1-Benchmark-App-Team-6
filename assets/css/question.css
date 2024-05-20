@@ -20,7 +20,7 @@ img {
 }
 #domande {
   margin: auto;
-  max-width: 50%;
+  max-width: 40%;
   padding: 60px 60px 80px 60px;
 }
 h1 {
@@ -45,7 +45,7 @@ span {
   font-variation-settings: "slnt" 0;
   color: white;
 }
-
+/* lavora sul  padding di ogni bottone */
 .button {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
@@ -54,7 +54,7 @@ span {
   border-color: rgb(255, 255, 255);
   color: #fff;
   background-color: transparent;
-
+  /* lavora sul gradiente */
   border: 5px solid
     linear-gradient(
       274deg,
@@ -64,7 +64,7 @@ span {
     );
   border-radius: 55px;
 
-  padding: 15px;
+  padding: 30px;
   min-height: 70px;
   min-width: 404px;
 }
