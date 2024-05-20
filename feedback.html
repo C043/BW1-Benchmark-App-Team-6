@@ -8,7 +8,7 @@
     <title>Feedback-page</title>
   </head>
   <body>
-    <main id="feddbackContainer">
+    <main id="feedbackContainer">
       <nav class="logo">
         <img src="./assets/images/epicode_logo.png" alt="Logo Epicode" />
       </nav>
@@ -22,17 +22,58 @@
         </p>
       </div>
 
-      <div class="stars">
-        <div class="feedbackSubtitle">
-          <p>Leave us an open feedback about your experience so far</p>
-        </div>
+      <div class="openWriteFeedback">
+        <form id="commentFeedback">
+          <div class="container">
+            <div class="feedback-stars">
+              <input type="radio" id="star1" name="rating" value="1" />
+              <label for="star1" class="full"></label>
+
+              <input type="radio" id="star2" name="rating" value="2" />
+              <label for="star2" class="full"></label>
+
+              <input type="radio" id="star3" name="rating" value="3" />
+              <label for="star3" class="full"></label>
+
+              <input type="radio" id="star4" name="rating" value="4" />
+              <label for="star4" class="full"></label>
+
+              <input type="radio" id="star5" name="rating" value="5" />
+              <label for="star5" class="full"></label>
+
+              <input type="radio" id="star6" name="rating" value="6" />
+              <label for="star6" class="full"></label>
+
+              <input type="radio" id="star7" name="rating" value="7" />
+              <label for="star7" class="full"></label>
+
+              <input type="radio" id="star8" name="rating" value="8" />
+              <label for="star8" class="full"></label>
+
+              <input type="radio" id="star9" name="rating" value="9" />
+              <label for="star9" class="full"></label>
+
+              <input type="radio" id="star10" name="rating" value="10" />
+              <label for="star10" class="full"></label>
+
+              <h4 id="rating-value"></h4>
+            </div>
+          </div>
+          <div class="feedbackSubtitle">
+            <p>Leave us an open feedback about your experience so far</p>
+          </div>
+          <input
+            type="text"
+            id="comment"
+            placeholder="Write your commen here"
+          />
+        </form>
+        <hr />
       </div>
-      <input type="text" id="comment" placeholder="Write your commen here" />
       <div id="buttonContainer">
-        <button id="moreInfoButton" type="submit">
-          <a href="#">Send Feedback</a>
-        </button>
+        <button id="sendFeedback" type="submit">SEND</button>
       </div>
     </main>
+    <script src="./assets/script/feedback.js"></script>
   </body>
 </html>
