@@ -115,29 +115,37 @@ const answerRandomizer = (array) => {
 };
 
 const questionGen = () => {
-  const questionSpace = document.getElementById("domande");
-  const answerSpace = document.getElementById("risposte");
-  questionSpace.innerHTML = "";
-  answerSpace.innerHTML = "";
-  const questionH1 = document.createElement("h1");
-  questionH1.innerText = questions[questionNumber].question;
-  questionSpace.appendChild(questionH1);
-  for (let i = 0; i < questions[questionNumber].incorrect_answers.length; i++) {
-    const currentAnswer = questions[questionNumber].incorrect_answers[i];
-    const answerBtn = document.createElement("button");
-    answerBtn.innerText = currentAnswer;
-    answerBtn.id = "answer" + i;
-    answerSpace.appendChild(answerBtn);
+  if (questionNumber < 10) {
+    const questionSpace = document.getElementById("domande");
+    const answerSpace = document.getElementById("risposte");
+    questionSpace.innerHTML = "";
+    answerSpace.innerHTML = "";
+    const questionH1 = document.createElement("h1");
+    questionH1.innerText = questions[questionNumber].question;
+    questionSpace.appendChild(questionH1);
+    for (
+      let i = 0;
+      i < questions[questionNumber].incorrect_answers.length;
+      i++
+    ) {
+      const currentAnswer = questions[questionNumber].incorrect_answers[i];
+      const answerBtn = document.createElement("button");
+      answerBtn.onclick = questionGen;
+      answerBtn.innerText = currentAnswer;
+      answerBtn.id = "answer" + i;
+      answerSpace.appendChild(answerBtn);
+    }
+    const currentQuestionSpace = document.getElementById("current-question");
+    currentQuestionSpace.innerHTML = "";
+    const p = document.createElement("p");
+    const pSpan = document.createElement("span");
+    pSpan.innerText = " / 10";
+    p.innerText = "QUESTION " + (questionNumber + 1);
+    p.appendChild(pSpan);
+    currentQuestionSpace.appendChild(p);
+    questionNumber++;
+  } else {
   }
-  const currentQuestionSpace = document.getElementById("current-question");
-  currentQuestionSpace.innerHTML = "";
-  const p = document.createElement("p");
-  const pSpan = document.createElement("span");
-  pSpan.innerText = " / 10";
-  p.innerText = "QUESTION " + (questionNumber + 1);
-  p.appendChild(pSpan);
-  currentQuestionSpace.appendChild(p);
-  questionNumber++;
 };
 
 (window.onload = answerRandomizer(questions)), questionGen();
