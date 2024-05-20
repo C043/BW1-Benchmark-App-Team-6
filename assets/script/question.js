@@ -114,6 +114,15 @@ const answerRandomizer = (array) => {
   }
 };
 
+const checkAnswer = (question, answer) => {
+  if (answer === question.correct_answer) {
+    console.log("Complimenti");
+    userScore++;
+    console.log(userScore);
+  } else {
+  }
+};
+
 const questionGen = () => {
   if (questionNumber < 10) {
     const questionSpace = document.getElementById("domande");
@@ -130,8 +139,8 @@ const questionGen = () => {
     ) {
       const currentAnswer = questions[questionNumber].incorrect_answers[i];
       const answerBtn = document.createElement("button");
-      answerBtn.onclick = questionGen;
       answerBtn.innerText = currentAnswer;
+      answerBtn.onclick = questionGen;
       answerBtn.id = "answer" + i;
       answerSpace.appendChild(answerBtn);
     }
