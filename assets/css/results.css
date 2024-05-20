@@ -1,0 +1,115 @@
+body {
+    margin: 0 4em;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+}
+
+.center {
+    text-align: center;
+}
+
+h1 {
+    font-size: 6em;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+strong {
+    font-size: 9em;
+}
+
+.result-questions {
+    font-size: 2em;
+    color: rgba(255, 255, 255, 0.473);
+
+}
+
+header {
+    border: 1px solid white;
+    padding: 2em;
+}
+
+header img {
+    border: 1px solid white;
+    margin-bottom: 0;
+    width: 4empx;
+    height: 3em;
+}
+
+.title {
+    border: 1px solid white;
+    padding: 0em 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.chart-div {
+    border: 1px solid white;
+    padding: 2em;
+}
+
+.chart-box {
+
+    width: 550px;
+    height: 550px;
+    margin: auto;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 1em;
+    
+}
+
+
+
+#correctDiv {
+    width: 100%;
+    border: 1px solid white;
+    padding: 2em;
+    text-align: left;
+}
+
+.correct-content {
+    border: 1px solid white;
+    width: 400px;
+    margin: 5em auto;
+
+}
+
+#wrongDiv {
+    width: 100%;
+    border: 1px solid white;
+    padding: 2em;
+}
+
+.wrong-content {
+    text-align: right;
+    width: 400px;
+    margin: 5em auto;
+    border: 1px solid white;
+}
+
+button {
+    font-size: 3em;
+    padding: 0.6em 1.5em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    border: 1px solid white;
+    color: white;
+    background-color: transparent;
+    box-shadow: 0px 1px 48px -7px hsl(173, 100%, 54%);
+}
+
+button:hover {
+    background-color: hsla(173, 100%, 54%, 0.719);
+    box-shadow: 0px 1px 48px 8px hsl(173, 100%, 54%);
+}
+
