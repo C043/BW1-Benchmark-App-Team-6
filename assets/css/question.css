@@ -1,7 +1,7 @@
 body {
   background-image: url(../images/bg.jpg);
   background-size: cover;
-  background-attachment: fixed;
+  place-items: center;
   background-repeat: no-repeat;
 }
 header {
@@ -12,12 +12,10 @@ main {
 }
 #logo {
   padding: 40px 70px;
-  .box2 {
-    display: inline-block;
-    width: 200px;
-    height: 100px;
-    margin: 1em;
-  }
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  margin: 1em;
 }
 
 img {
@@ -36,50 +34,52 @@ h1 {
   color: white;
   font-style: normal;
 }
-
-span {
-  font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-  font-size: 60px;
-  color: white;
-  font-weight: 700;
-}
-#timer {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-variation-settings: "slnt" 0;
-  color: white;
-}
-.button-container {
-  border: 1px solid white;
-  width: 50em;
+#risposte {
+  border: 2px rgba(255, 255, 255, 0) solid;
+  width: 70%;
   margin: auto;
-  padding: 60px 30px 60px 30px;
+  height: 15em;
 }
 
-/* lavora sul  padding di ogni bottone */
+.button-container {
+  display: inline-block;
+  width: 25em;
+  height: ;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 60px;
+  border-width: 10px;
+  border: 2px solid white;
+
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.186),
+    rgba(255, 255, 255, 0.233)
+  );
+}
+
 .button {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-weight: normal;
+  text-align: center;
   display: inline-block;
-
-  margin: 0em 1em 1em 1em;
-  border-color: rgb(255, 255, 255);
+  border: none;
   color: #fff;
-  background-color: transparent;
-  /* lavora sul gradiente */
+  background-color: hsla(0, 18%, 97%, 0.137);
   border-radius: 55px;
-  padding: 20px 20px 20px 20px;
-  width: ;
-  min-height: 5em;
-  min-width: 20em;
+  padding: 2px;
+  width: 30em;
+  cursor: pointer;
+  height: 5em; /* lavora sul gradiente */
+  /* 
+  box-shadow: 2px 2px 2px #dedede, -2px -2px 2px #dedede, 2px -2px 2px #dedede,
+    -2px 2px 2px #dedede;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color='#dedede', Direction=135, Strength=10); */
 }
 footer {
   text-align: center;
   position: absolute;
-  bottom: 0;
+
   width: 100%;
   height: 4rem;
 }
@@ -90,5 +90,4 @@ p {
   font-style: normal;
   font-size: 16px;
   color: white;
-  font-variation-settings: "slnt" 0;
 }
