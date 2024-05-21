@@ -64,25 +64,51 @@ body {
     margin-left: 55px;
     display: inline-block;
 }
-
-.input .inp {
-    display: inline-block;
-  vertical-align: bottom;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 10%;
-  border-style: solid;
-  border-width: 0.1rem;
-}
-
 /*
-.input .checked {
-    background-color: #D20094;
+.Input .inp {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 10%;
+    border-style: solid;
+    border-width: 0.1rem;
+    cursor: pointer;
 }*/
 
-.input input {
-    opacity: 0;
+/* clip-path: polygon(32% 74%, 94% 9%, 38% 94%, 3% 64%); */
+/*
+input[type="checkbox"] {
+    display: none;
     cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+    margin: 0;
+}*/
+#input {
+    display: none;
+}
+
+.labelForInput {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 10%;
+    border-style: solid;
+    border-width: 0.1rem;
+    cursor: pointer;
+}
+
+.checked {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 10%;
+    border-style: solid;
+    border-width: 0.1rem;
+    background-color: #D20094;
 }
 
 .input span {
@@ -94,7 +120,7 @@ body {
     text-align: center;
 }
 
-#btn button {
+#btn #proceed {
     float: inline-end;
     background-color: #00ffff;
     margin-left: 10%;
@@ -106,8 +132,15 @@ body {
     font-family: "Outfit", sans-serif;
     font-size: larger;
     font-weight: bolder;
-    -webkit-box-shadow: inset -1px -1px 19px 0px #00FFFF,0px 4px 41px -9px #00FFFF;
--moz-box-shadow: inset -1px -1px 19px 0px #00FFFF,0px 4px 41px -9px #00FFFF;
--o-box-shadow: inset -1px -1px 19px 0px #00FFFF,0px 4px 41px -9px #00FFFF;
-box-shadow: inset -1px -1px 19px 0px #00FFFF,0px 4px 41px -9px #00FFFF;
+    -webkit-box-shadow: inset -1px -1px 19px 0px #00FFFF, 0px 4px 41px -9px #00FFFF;
+    -moz-box-shadow: inset -1px -1px 19px 0px #00FFFF, 0px 4px 41px -9px #00FFFF;
+    -o-box-shadow: inset -1px -1px 19px 0px #00FFFF, 0px 4px 41px -9px #00FFFF;
+    box-shadow: inset -1px -1px 19px 0px #00FFFF, 0px 4px 41px -9px #00FFFF;
+    -webkit-transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;
 }
+
+#btn #proceed:hover {
+    box-shadow: 0 0 10px 0 #105c7a inset, 0 0 10px 4px #1c78a3;
+    color: azure;
+  }
