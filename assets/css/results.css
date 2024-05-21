@@ -24,6 +24,22 @@ strong {
     font-size: 9em;
 }
 
+.title-chart {
+    font-size: 40px;
+    margin-top: 2em;
+    font-weight: bold ;
+}
+
+.blue {
+    color: aqua;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.description-result {
+    font-size: 20px;
+}
+
 .result-questions {
     font-size: 2em;
     color: rgba(255, 255, 255, 0.473);
@@ -65,10 +81,19 @@ main {
     border: 1px solid white;
     border-radius: 50%;
     padding: 1em;
+    position: relative;
     
 }
 
-
+#inner-chart {
+    border: 1px solid white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 325px;
+    height: 325px;
+}
 
 #correctDiv {
     width: 100%;
@@ -78,7 +103,7 @@ main {
 }
 
 .correct-content {
-    border: 1px solid white;
+    border: 1px solid hsl(0, 0%, 100%);
     width: 400px;
     margin: 5em auto;
 
@@ -112,4 +137,3 @@ button:hover {
     background-color: hsla(173, 100%, 54%, 0.719);
     box-shadow: 0px 1px 48px 8px hsl(173, 100%, 54%);
 }
-

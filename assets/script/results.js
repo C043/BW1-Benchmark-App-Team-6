@@ -1,6 +1,10 @@
 
-const risposteCorrette = 5;
+const risposteCorrette = 7;
 const risposteSbagliate = 10 - risposteCorrette;
+
+
+
+/* creo il grafico */
 
 const ctx = document.getElementById('my-chart');
 
@@ -14,7 +18,7 @@ const data = {
         label: 'Answers',
         data: [risposteCorrette, risposteSbagliate],
         backgroundColor: [
-            'rgb(245, 48, 48)',
+            'rgb(245, 48, 48234)',
             'rgb(48, 198, 224)',
         ],
         borderWidth: 0,
@@ -38,8 +42,7 @@ const config = {
 
 new Chart(ctx, config);
 
-
-
+/* trasformo il risultato in percentuale */
 
 const rate = function (correct, incorrect) {
     const correctRate = (correct / 10) * 100
@@ -55,7 +58,7 @@ console.log(Result)
 
 
 
-const rateDOM = function (Result) {
+const rateDOM = function (Risposte) {
     const correct = document.querySelector('#correctDiv .correct-content')
     correct.innerHTML = `
     <h1>Correct</h1>
@@ -67,9 +70,40 @@ const rateDOM = function (Result) {
     <h1>Wrong</h1>
     <strong><span id="perc-result">${Result.incorrectRate}</span>%</strong>
     <h6 class="result-questions"><span id="span-result">${Result.incorrectRate / 10}</span> / 10 questions</h6>`
+
 }
 
 rateDOM(Result)
 
 
+const textResult = function () {
+    const innerDiv = document.querySelector('#inner-chart')
+    if (risposteCorrette >= 6) {
+        innerDiv.innerHTML = `
+    <p class="title-chart">Congratulations!</p>
+          <p class="blue">You passed the exam</p>
+          <br>
+          <p class="description-result">We'll send you the certificate <br>in few minutes. <br>Check you email (including <br>promotions / spam folder)</p>
+    `
+    } else {
+        innerDiv.innerHTML = `
+    <p class="title-chart">Oh crap!</p>
+          <p class="blue">You better go play minecraft</p>
+          <br>
+          <p class="description-result">We'll send you the minecraft server <br>in few minutes. <br>Check you email</p>
+    `
+    }
 
+}
+
+textResult()
+
+
+
+
+const changeClass = function() {
+    const div = document.querySelector('#correct-content')
+
+}
+
+changeClass()
