@@ -120,7 +120,17 @@ const checkAnswer = (question, answer) => {
     userScore++;
     console.log(userScore);
   } else {
+    console.log("sbagliato");
   }
+};
+
+const eventHandler = (event) => {
+  const currentQuestion = questions[questionNumber - 1];
+  const answer = event.target.innerText;
+  console.log(answer);
+  console.log(currentQuestion);
+  checkAnswer(currentQuestion, answer);
+  questionGen();
 };
 
 const questionGen = () => {
@@ -140,7 +150,7 @@ const questionGen = () => {
       const currentAnswer = questions[questionNumber].incorrect_answers[i];
       const answerBtn = document.createElement("button");
       answerBtn.innerText = currentAnswer;
-      answerBtn.onclick = questionGen;
+      answerBtn.addEventListener("click", eventHandler);
       answerBtn.id = "answer" + i;
       answerSpace.appendChild(answerBtn);
     }
