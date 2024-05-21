@@ -67,19 +67,61 @@ a {
 #sendFeedback:hover {
   letter-spacing: 0.1rem;
 }
+
+.openWriteFeedback hr {
+  color: #d20094;
+  border: solid 1px;
+  margin-top: 0.5rem;
+  margin-left: 3rem;
+  margin-right: 2.5rem;
+}
+
+/* STELLE */
+
 .container {
   text-align: center;
   padding-top: 1.2rem;
 }
-.feedback-stars > label::before {
-  content: url(../images/star.svg);
-  margin: 0.5rem;
-  display: inline-block;
-  cursor: pointer;
-}
+
 .feedback-stars > input {
   display: none;
 }
-#openWriteFeedback hr {
-  background-color: #d20094;
+.feedback-stars {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  height: 3rem;
+  display: inline-block;
+}
+
+.feedback-stars > label::before {
+  content: url(../images/star.svg);
+  margin: 8px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.feedback-stars > label {
+  /* spengo le stelle con un filtro */
+  filter: brightness(35%) invert(80%) sepia(65%) saturate(530%)
+    hue-rotate(170deg) brightness(40%) contrast(295%);
+  display: inline-block;
+  cursor: pointer;
+}
+/* al passaggio del mouse senza selezione si azionano una serie di condizioni */
+.feedback-stars > input:checked ~ label,  /* Se un input è selezionato (checked), tutti i label che seguono vengono stilizzati, cioè vengono riaccesi.*/
+.feedback-stars:not(:checked) > label:hover ,/* Quando nessun input è selezionato, al passaggio del mouse su un label, questo viene stilizzato. */
+ .feedback-stars:not(:checked) > label:hover ~ label {
+  filter: sepia(55%) saturate(7500%) hue-rotate(105deg) brightness(125%)
+    contrast(105%);
+}
+/* al click del mouse vengono confermate le condizioni precedenti e attivata l'accensione delle stelle*/
+
+.feedback-stars > input:checked + label:hover, /*Se un input è selezionato e si passa il mouse sul label immediatamente successivo.*/
+.feedback-stars > input:checked ~ label:hover,/*Se un input è selezionato e si passa il mouse su qualsiasi label che segue.*/
+.feedback-stars > label:hover ~ input:checked ~ label, /*Se si passa il mouse su un label e c'è un input selezionato seguito da altri label.*/
+.feedback-stars > input:checked ~ label:hover ~ label {
+  /*Se un input è selezionato, si passa il mouse su un label seguito da altri label.*/
+  filter: sepia(55%) saturate(7500%) hue-rotate(105deg) brightness(125%)
+    contrast(105%);
 }

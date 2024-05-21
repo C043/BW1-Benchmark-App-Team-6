@@ -1,20 +1,27 @@
-let star = document.querySelectorAll("input:not(#comment)");
-let showValue = document.querySelector("#rating-value");
+/* document.addEventListener("DOMContentLoaded", function () {
+  const container = document.querySelector(".feedback-stars");
+  console.log(container);
+  const stars = Array.from(container.children);
 
-//ciclo for per la selezione delle stelle e la stampa di numeri di valutazione
-for (let i = 0; i < star.length; i++) {
-  star[i].addEventListener("click", function () {
-    i = this.value;
-    showValue.innerText = i + "/10";
-    console.log(showValue);
+  console.log(stars);
+  // Invertire l'ordine degli elementi
+  stars.reverse().forEach((star) => container.appendChild(star));
+ */
+const starInputs = document.querySelectorAll("input:not(#comment)");
+const showValue = document.querySelector("#rating-value");
+
+starInputs.forEach((star) => {
+  star.addEventListener("click", function () {
+    const value = this.value;
+    showValue.innerText = value + "/10";
+    console.log(showValue.innerText);
   });
-}
-const form = document.getElementById("commentFeedback");
+});
 
+const form = document.getElementById("commentFeedback");
 const sendComment = document.getElementById("sendFeedback");
 sendComment.addEventListener("click", () => {
   form.reset();
   showValue.innerText = "";
-  const url = "./index.html";
-  window.location.href = url;
 });
+/* }); */
