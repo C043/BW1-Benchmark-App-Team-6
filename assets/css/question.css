@@ -12,6 +12,12 @@ main {
 }
 #logo {
   padding: 40px 70px;
+  .box2 {
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    margin: 1em;
+  }
 }
 
 img {
@@ -20,7 +26,7 @@ img {
 }
 #domande {
   margin: auto;
-  max-width: 40%;
+  max-width: 50%;
   padding: 60px 60px 80px 60px;
 }
 h1 {
@@ -45,28 +51,30 @@ span {
   font-variation-settings: "slnt" 0;
   color: white;
 }
+.button-container {
+  border: 1px solid white;
+  width: 50em;
+  margin: auto;
+  padding: 60px 30px 60px 30px;
+}
+
 /* lavora sul  padding di ogni bottone */
 .button {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-weight: normal;
-  position: absolute;
+  display: inline-block;
+
+  margin: 0em 1em 1em 1em;
   border-color: rgb(255, 255, 255);
   color: #fff;
   background-color: transparent;
   /* lavora sul gradiente */
-  border: 5px solid
-    linear-gradient(
-      274deg,
-      rgba(2, 0, 36, 1) 0%,
-      rgba(9, 9, 121, 1) 8%,
-      rgba(173, 241, 255, 1) 83%
-    );
   border-radius: 55px;
-
-  padding: 30px;
-  min-height: 70px;
-  min-width: 404px;
+  padding: 20px 20px 20px 20px;
+  width: ;
+  min-height: 5em;
+  min-width: 20em;
 }
 footer {
   text-align: center;
