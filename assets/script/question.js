@@ -164,6 +164,7 @@ const questionGen = () => {
     currentQuestionSpace.appendChild(p);
     questionNumber++;
   } else {
+    location.replace("results.html");
   }
 };
 
