@@ -127,8 +127,6 @@ const checkAnswer = (question, answer) => {
 const eventHandler = (event) => {
   const currentQuestion = questions[questionNumber - 1];
   const answer = event.target.innerText;
-  console.log(answer);
-  console.log(currentQuestion);
   checkAnswer(currentQuestion, answer);
   questionGen();
 };
