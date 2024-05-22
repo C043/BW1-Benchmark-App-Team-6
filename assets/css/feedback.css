@@ -50,6 +50,7 @@ body {
   margin-top: 3.4rem;
   text-align: center;
 }
+
 a {
   color: black;
   text-decoration: none;
@@ -105,7 +106,7 @@ a {
   /* spengo le stelle con un filtro */
   filter: brightness(35%) invert(80%) sepia(65%) saturate(530%)
     hue-rotate(170deg) brightness(40%) contrast(295%);
-  display: inline-block;
+  float: right;
   cursor: pointer;
 }
 /* al passaggio del mouse senza selezione si azionano una serie di condizioni */

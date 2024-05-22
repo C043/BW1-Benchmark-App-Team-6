@@ -1,15 +1,6 @@
-/* document.addEventListener("DOMContentLoaded", function () {
-  const container = document.querySelector(".feedback-stars");
-  console.log(container);
-  const stars = Array.from(container.children);
-
-  console.log(stars);
-  // Invertire l'ordine degli elementi
-  stars.reverse().forEach((star) => container.appendChild(star));
- */
 const starInputs = document.querySelectorAll("input:not(#comment)");
 const showValue = document.querySelector("#rating-value");
-
+const moreInfoButton = document.getElementById("moreInfo");
 starInputs.forEach((star) => {
   star.addEventListener("click", function () {
     const value = this.value;
@@ -24,4 +15,3 @@ sendComment.addEventListener("click", () => {
   form.reset();
   showValue.innerText = "";
 });
-/* }); */
