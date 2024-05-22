@@ -16,9 +16,6 @@
   margin: auto;
 }
 
-p {
-}
-
 #timer-circle {
   animation: dash 61s;
   animation-timing-function: linear;

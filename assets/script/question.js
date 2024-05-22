@@ -198,10 +198,14 @@ const questionGen = () => {
     ) {
       const currentAnswer = questions[questionNumber].incorrect_answers[i];
       const answerBtn = document.createElement("button");
+      answerBtn.classList.add("button");
+      const buttonDiv = document.createElement("div");
+      buttonDiv.classList.add("button-container");
       answerBtn.innerText = currentAnswer;
       answerBtn.addEventListener("click", eventHandler);
       answerBtn.id = "answer" + i;
-      answerSpace.appendChild(answerBtn);
+      buttonDiv.appendChild(answerBtn);
+      answerSpace.appendChild(buttonDiv);
     }
     const currentQuestionSpace = document.getElementById("current-question");
     currentQuestionSpace.innerHTML = "";
