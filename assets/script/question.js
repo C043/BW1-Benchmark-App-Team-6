@@ -115,13 +115,27 @@ const answerRandomizer = (array) => {
 };
 
 const checkAnswer = (question, answer) => {
+  /*   if (answer === question.correct_answer) {
+      console.log("Complimenti");
+      userScore++;
+      console.log(userScore);
+    } else {
+      console.log("sbagliato");
+    } */
+
+  // Dopo aver aggiornato userScore
   if (answer === question.correct_answer) {
     console.log("Complimenti");
     userScore++;
     console.log(userScore);
+
+    // Salva userScore nel localStorage
+    localStorage.setItem('userScore', userScore);
   } else {
     console.log("sbagliato");
   }
+
+
 };
 
 const timer = () => {

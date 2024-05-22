@@ -1,5 +1,7 @@
 
-const risposteCorrette = 5
+const userScore = localStorage.getItem('userScore') || 0;
+
+const risposteCorrette = userScore
 
 const risposteSbagliate = 10 - risposteCorrette;
 
