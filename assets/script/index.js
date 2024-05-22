@@ -5,7 +5,7 @@ checkBox.addEventListener("click", () => {
         if(checkBox.checked === true){ // se l'input è cliccato 
             //label2.classList.add("checked") // creo una classe per la label creato
             const label1 = document.getElementById("lbl") // questo è la label non cliccato
-            label1.classList.remove("labelForInput") // elimino la classe precedente della label
+            //label1.classList.remove("labelForInput") // elimino la classe precedente della label
             //const label2 = document.createElement("label")
             label1.classList.add("checked") // creo una nuova classe alla label 
             label1.append(checkBox) // appendo l'input nella label

@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-    margin: 60px;
+    margin: 70px;
 }
 
 #title {
@@ -52,39 +52,19 @@ body {
 
 .rules li {
     padding: 10px;
-    font-weight: 200;
+    font-weight: 250;
 }
 
 .rules b {
-    font-weight: bolder;
+    font-weight:600;
 }
 
 
-.input {
+.Input {
     margin-left: 55px;
     display: inline-block;
 }
-/*
-.Input .inp {
-    display: inline-block;
-    vertical-align: bottom;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 10%;
-    border-style: solid;
-    border-width: 0.1rem;
-    cursor: pointer;
-}*/
 
-/* clip-path: polygon(32% 74%, 94% 9%, 38% 94%, 3% 64%); */
-/*
-input[type="checkbox"] {
-    display: none;
-    cursor: pointer;
-    width: 1rem;
-    height: 1rem;
-    margin: 0;
-}*/
 #input {
     display: none;
 }
@@ -102,45 +82,59 @@ input[type="checkbox"] {
 
 .checked {
     display: inline-block;
-    vertical-align: bottom;
+    
     width: 1rem;
     height: 1rem;
-    border-radius: 10%;
     border-style: solid;
-    border-width: 0.1rem;
     background-color: #D20094;
+    cursor: pointer;
+    clip-path: polygon(38% 74%, 95% 6%, 46% 91%, 5% 71%);
 }
 
-.input span {
-    font-size: small;
-    padding-left: 5px;
+.Input span {
+    font-size: 12px;
+    padding-left: 10px;
+    font-weight: 500;
 }
 
 #btn {
     text-align: center;
+    float: inline-end;
+    margin-right: 15%;
+    font-size: larger;
 }
 
 #btn #proceed {
-    float: inline-end;
+    /*
     background-color: #00ffff;
-    margin-left: 10%;
     padding: 15px;
     border: 1px solid #00ffff;
     color: black;
-    width: 150px;
+    width: 200px;
     text-align: center;
     font-family: "Outfit", sans-serif;
-    font-size: larger;
+    font-size: large;
     font-weight: bolder;
     -webkit-box-shadow: inset -1px -1px 19px 0px #00FFFF, 0px 4px 41px -9px #00FFFF;
     -moz-box-shadow: inset -1px -1px 19px 0px #00FFFF, 0px 4px 41px -9px #00FFFF;
     -o-box-shadow: inset -1px -1px 19px 0px #00FFFF, 0px 4px 41px -9px #00FFFF;
     box-shadow: inset -1px -1px 19px 0px #00FFFF, 0px 4px 41px -9px #00FFFF;
     -webkit-transition: all 150ms ease-in-out;
-    transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in-out;*/
+
+    color: #040b4b;
+    font-family: "Outfit", sans-serif;
+    background-color: #00ffff;
+    padding: 13px;
+    border: none;
+    box-shadow: 1px 1px 20px 5px #00b7ff9d;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bolder;
+    width: 200px;
 }
 
 #btn #proceed:hover {
-    box-shadow: 0 0 10px 0 #105c7a inset, 0 0 10px 4px #1c78a3;
-    color: azure;
+    box-shadow: 0 0 30px 0 #0ec9c9 inset, 0 0 30px 4px #1291cc;
+    color: white;
   }
