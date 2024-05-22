@@ -129,7 +129,7 @@ const timer = () => {
   timerCircle.style.animationName = "none";
   setTimeout(() => {
     timerCircle.style.animationName = "";
-  }, 0);
+  }, 1000);
 };
 
 let second = 60;
@@ -138,7 +138,7 @@ let interval = setInterval(() => {
     second--;
     console.log(second);
   } else {
-    eventHandler();
+    timeOut();
   }
 }, 1000);
 
@@ -148,11 +148,21 @@ const counter = () => {
   interval = setInterval(() => {
     if (second > 0) {
       console.log(second);
+      innerTimer();
       second--;
     } else {
       timeOut();
     }
   }, 1000);
+};
+
+const innerTimer = () => {
+  const innerTimerSpace = document.getElementById("inner-timer");
+  innerTimerSpace.innerHTML = `<p>
+  SECONDI <br />
+  ${second} <br>
+  RIMANENTI
+</p>`;
 };
 
 const eventHandler = (event) => {
@@ -162,12 +172,14 @@ const eventHandler = (event) => {
   questionGen();
   timer();
   counter();
+  innerTimer();
 };
 
 const timeOut = () => {
   questionGen();
   timer();
   counter();
+  innerTimer();
 };
 
 const questionGen = () => {
@@ -208,4 +220,5 @@ const questionGen = () => {
 (window.onload = answerRandomizer(questions)),
   questionGen(),
   timer(),
-  counter();
+  counter(),
+  innerTimer();
