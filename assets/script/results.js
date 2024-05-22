@@ -1,8 +1,9 @@
 
-const risposteCorrette = 7;
+import {risposteCorrette} from './question.js'
+
 const risposteSbagliate = 10 - risposteCorrette;
 
-
+console.log(risposteCorrette)
 
 /* creo il grafico */
 
@@ -40,7 +41,7 @@ const config = {
     }
 }
 
-new Chart(ctx, config);
+const myChart = new Chart(ctx, config);
 
 /* trasformo il risultato in percentuale */
 
@@ -56,7 +57,7 @@ const Result = rate(risposteCorrette, risposteSbagliate)
 console.log(Result)
 
 
-
+/* Inserisco i risultati all'interno del mio DOM in percentuale */
 
 const rateDOM = function (Risposte) {
     const correct = document.querySelector('#correctDiv .correct-content')
@@ -101,9 +102,3 @@ textResult()
 
 
 
-const changeClass = function() {
-    const div = document.querySelector('#correct-content')
-
-}
-
-changeClass()
