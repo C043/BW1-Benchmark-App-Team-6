@@ -132,12 +132,42 @@ const timer = () => {
   }, 0);
 };
 
+let second = 60;
+let interval = setInterval(() => {
+  if (second > 0) {
+    second--;
+    console.log(second);
+  } else {
+    eventHandler();
+  }
+}, 1000);
+
+const counter = () => {
+  clearInterval(interval);
+  second = 60;
+  interval = setInterval(() => {
+    if (second > 0) {
+      console.log(second);
+      second--;
+    } else {
+      timeOut();
+    }
+  }, 1000);
+};
+
 const eventHandler = (event) => {
   const currentQuestion = questions[questionNumber - 1];
   const answer = event.target.innerText;
   checkAnswer(currentQuestion, answer);
   questionGen();
   timer();
+  counter();
+};
+
+const timeOut = () => {
+  questionGen();
+  timer();
+  counter();
 };
 
 const questionGen = () => {
@@ -175,4 +205,7 @@ const questionGen = () => {
   }
 };
 
-(window.onload = answerRandomizer(questions)), questionGen(), timer();
+(window.onload = answerRandomizer(questions)),
+  questionGen(),
+  timer(),
+  counter();
