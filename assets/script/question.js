@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-export const risposteCorrette = 5;
-=======
 const questions = [
   {
     category: "Science: Computers",
@@ -229,4 +226,3 @@ const questionGen = () => {
   timer(),
   counter(),
   innerTimer();
->>>>>>> ea85bc606a9b79a7b68e9623dddf9be04310350d
