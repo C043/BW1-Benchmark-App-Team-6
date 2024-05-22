@@ -4,9 +4,7 @@ body {
   place-items: center;
   background-repeat: no-repeat;
 }
-header {
-  padding: 60, 40, 30, 40;
-}
+
 main {
   text-align: center;
 }
@@ -86,13 +84,17 @@ footer {
 p {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  /*   font-weight: <weight>; */
   font-style: normal;
   font-size: 16px;
   color: white;
 }
 #timer {
   position: relative;
+  width: 12%;
+  margin-top: 3%;
+  margin-right: 6%;
+  float: right;
 }
 
 #inner-timer {
