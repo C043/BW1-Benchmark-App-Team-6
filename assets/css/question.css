@@ -42,7 +42,6 @@ h1 {
 .button-container {
   display: inline-block;
   width: 25em;
-  height: ;
   margin: 5px;
   padding: 10px;
   border-radius: 60px;
@@ -102,7 +101,6 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 1px solid black;
   font-size: 100%;
   text-align: center;
   border-radius: 50%;
