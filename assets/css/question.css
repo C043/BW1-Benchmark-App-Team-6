@@ -1,0 +1,13 @@
+#timer-circle {
+  animation: dash 60s;
+  animation-timing-function: linear;
+}
+
+@keyframes dash {
+  from {
+    stroke-dasharray: 100 0;
+  }
+  to {
+    stroke-dasharray: 0 100;
+  }
+}

@@ -124,11 +124,20 @@ const checkAnswer = (question, answer) => {
   }
 };
 
+const timer = () => {
+  const timerCircle = document.getElementById("timer-circle");
+  timerCircle.style.animationName = "none";
+  setTimeout(() => {
+    timerCircle.style.animationName = "";
+  }, 0);
+};
+
 const eventHandler = (event) => {
   const currentQuestion = questions[questionNumber - 1];
   const answer = event.target.innerText;
   checkAnswer(currentQuestion, answer);
   questionGen();
+  timer();
 };
 
 const questionGen = () => {
@@ -166,4 +175,4 @@ const questionGen = () => {
   }
 };
 
-(window.onload = answerRandomizer(questions)), questionGen();
+(window.onload = answerRandomizer(questions)), questionGen(), timer();
