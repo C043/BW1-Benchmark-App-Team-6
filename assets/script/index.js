@@ -2,37 +2,20 @@
 const checkBox = document.getElementById("input") // è l'input
 
 checkBox.addEventListener("click", () => {
-        if(checkBox.checked === true){ // se l'input è cliccato 
-            //label2.classList.add("checked") // creo una classe per la label creato
-            const label1 = document.getElementById("lbl") // questo è la label non cliccato
-            //label1.classList.remove("labelForInput") // elimino la classe precedente della label
-            //const label2 = document.createElement("label")
-            label1.classList.add("checked") // creo una nuova classe alla label 
-            label1.append(checkBox) // appendo l'input nella label
-            /*const div = document.querySelector(".Input") // questo è il div contenitore delle label
-            div.insertBefore(label1,div.firstChild) // inserisco come primogenito label 2*/
+    if (checkBox.checked === true) { // vedo se l'input è cliccato 
+        const label1 = document.getElementById("lbl") // questa è la label non cliccato
+        label1.classList.add("checked") // creo una nuova classe alla label 
+        label1.append(checkBox) // appendo l'input nella label come "fratello"
     } else {
-         const label2 = document.querySelector("#lbl")
-         label2.classList.remove("checked")
-         label2.classList.add("labelForInput")
-         label2.append(checkBox)
+        const label2 = document.querySelector("#lbl") // tag input
+        label2.classList.remove("checked") // rimuovo la classe quando è cliccato
+        label2.classList.add("labelForInput") // rimetto la classe iniziale(vuoto)
+        label2.append(checkBox) // appendo l'input nella label come "fratello"
     }
 }
 )
-/*
-checkBox.addEventListener("click",() => {
-    const checkBoxChecked = document.querySelector(".checked")
-    checkBoxChecked.classList.remove("checked")
-    checkBoxChecked.classList.add("containerInput")
-    checkBoxChecked.appendChild(checkBox)
-})*/
-
-
-
-
-
-const button = document.getElementById("btn")
-
+const button = document.getElementById("btn") // è il bottone
+// se il checkbox è checked va nella prossima pagina(question) / in caso contrario mi dice di fare il check sull'input
 button.addEventListener("click", () => {
     if (checkBox.checked === true) {
         const url = "./question.html"
