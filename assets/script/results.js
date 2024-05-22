@@ -1,5 +1,5 @@
 
-import {risposteCorrette} from './question.js'
+const risposteCorrette = 5
 
 const risposteSbagliate = 10 - risposteCorrette;
 
@@ -100,5 +100,7 @@ const textResult = function () {
 textResult()
 
 
-
+function nextPage () {
+    window.location.href = './feedback.html';
+}
 
