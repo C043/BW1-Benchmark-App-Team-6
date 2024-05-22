@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@400;700&display=swap");
+
+body {
+  font-family: "Outfit", sans-serif;
+  background-image: url(../images/bg.jpg);
+  color: white;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  margin: 2rem;
+}
+.logo img {
+  width: 150px;
+}
+
+#feedbackTitle h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 5.5rem;
+}
+
+#container-feedback {
+  width: 750px;
+  margin-inline: auto;
+}
+.feedbackSubtitle {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.6rem;
+}
+#comment {
+  background-color: transparent;
+  border-style: none;
+  font-size: 1rem;
+}
+
+#comment {
+  outline: none;
+  border: none;
+  height: 100%;
+  width: 100%;
+  padding-top: 3rem;
+  margin-left: 3.5rem;
+  color: white;
+}
+#buttonContainer {
+  margin-top: 3.4rem;
+  text-align: center;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+#sendFeedback {
+  font-family: "Outfit", sans-serif;
+  background-color: #00ffff;
+  padding: 1rem 3rem;
+  border: none;
+  box-shadow: 0px 0px 10px 4px #00b7ff9d;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: 800;
+}
+#sendFeedback:hover {
+  letter-spacing: 0.1rem;
+}
+
+.openWriteFeedback hr {
+  color: #d20094;
+  border: solid 1px;
+  margin-top: 0.5rem;
+  margin-left: 3rem;
+  margin-right: 2.5rem;
+}
+
+/* STELLE */
+
+.container {
+  text-align: center;
+  padding-top: 1.2rem;
+}
+
+.feedback-stars > input {
+  display: none;
+}
+.feedback-stars {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  height: 3rem;
+  display: inline-block;
+}
+
+.feedback-stars > label::before {
+  content: url(../images/star.svg);
+  margin: 8px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.feedback-stars > label {
+  /* spengo le stelle con un filtro */
+  filter: brightness(35%) invert(80%) sepia(65%) saturate(530%)
+    hue-rotate(170deg) brightness(40%) contrast(295%);
+  float: right;
+  cursor: pointer;
+}
+/* al passaggio del mouse senza selezione si azionano una serie di condizioni */
+.feedback-stars > input:checked ~ label,  /* Se un input è selezionato (checked), tutti i label che seguono vengono stilizzati, cioè vengono riaccesi.*/
+.feedback-stars:not(:checked) > label:hover ,/* Quando nessun input è selezionato, al passaggio del mouse su un label, questo viene stilizzato. */
+ .feedback-stars:not(:checked) > label:hover ~ label {
+  filter: sepia(55%) saturate(7500%) hue-rotate(105deg) brightness(125%)
+    contrast(105%);
+}
+/* al click del mouse vengono confermate le condizioni precedenti e attivata l'accensione delle stelle*/
+
+.feedback-stars > input:checked + label:hover, /*Se un input è selezionato e si passa il mouse sul label immediatamente successivo.*/
+.feedback-stars > input:checked ~ label:hover,/*Se un input è selezionato e si passa il mouse su qualsiasi label che segue.*/
+.feedback-stars > label:hover ~ input:checked ~ label, /*Se si passa il mouse su un label e c'è un input selezionato seguito da altri label.*/
+.feedback-stars > input:checked ~ label:hover ~ label {
+  /*Se un input è selezionato, si passa il mouse su un label seguito da altri label.*/
+  filter: sepia(55%) saturate(7500%) hue-rotate(105deg) brightness(125%)
+    contrast(105%);
+}
