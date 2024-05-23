@@ -31,7 +31,7 @@ img {
 h1 {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
-  font-size: clamp(1rem, 2vw, 3rem);
+  font-size: 2vw;
   color: white;
   font-style: normal;
 }
@@ -40,18 +40,18 @@ h1 {
   border: 2px rgba(255, 255, 255, 0) solid;
   width: 50%;
   margin: auto;
-  height: 15em;
+  height: 20em;
 }
 
 .button-container {
   display: inline-block;
   width: 23em;
   margin: 5px;
-  padding: 10px;
+  /*  padding: 10px; */
   border-radius: 3em;
   border-width: 3em;
+  border: 5px solid slhsl(0, 0%, 100%);
 }
-
 .button {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
@@ -60,7 +60,10 @@ h1 {
   display: inline-block;
   border: solid 3px;
   color: #fff;
-  background-color: rgba(255, 255, 255, 0.274);
+  background-color: hsla(0, 0%, 100%, 0.24);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent;
   border-radius: 55px;
   padding: 2px;
   width: 28em;
@@ -72,30 +75,30 @@ h1 {
   outline-color: transparent;
   outline-style: solid;
   background-color: #d20094;
-  background: radial-gradient(#d20094, hwb(318 0% 60%));
+  background: radial-gradient(#d20094, hwb(318 2% 58% / 0.637));
 }
 
 footer {
   text-align: center;
-  padding-top: 10%;
+  padding-top: 5%;
   margin-top: 5%;
   height: 4rem;
 }
 
 #inner-timer p {
-  font-size: clamp(1rem, 2em, 3em);
+  font-size: 1vw;
 }
 
 p {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
-  font-size: 1em;
+  font-size: 1.5vw;
 
   color: white;
 }
 
 #span {
-  font-size: clamp(1rem, 2em, 10em);
+  font-size: 3vw;
   text-align: center;
 }
 
@@ -112,6 +115,7 @@ p {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 0.5vw;
   text-align: center;
   border-radius: 50%;
   height: 30%;

@@ -896,7 +896,7 @@ const checkAnswer = (question, answer) => {
     userScore++;
     const answerSpace = document.getElementById("risposte");
     answerSpace.innerHTML = "";
-    answerSpace.innerHTML = "<p>Corretta! :)</p>";
+    answerSpace.innerHTML = "<p>Correct! :)</p>";
     console.log(userScore);
 
     // Salva userScore nel localStorage
@@ -904,7 +904,7 @@ const checkAnswer = (question, answer) => {
   } else {
     const answerSpace = document.getElementById("risposte");
     answerSpace.innerHTML = "";
-    answerSpace.innerHTML = "<p>Sbagliata :(</p>";
+    answerSpace.innerHTML = "<p>Wrong! :(</p>";
     console.log("sbagliato");
   }
 };
@@ -918,23 +918,29 @@ const timer = () => {
 };
 
 let second = 60;
-let interval = setInterval(() => {
-  if (second > 0) {
-    second--;
-    console.log(second);
-  } else {
-    timeOut();
-  }
-}, 1000);
+let interval = setInterval(() => {}, 1000);
 
 const counter = () => {
   clearInterval(interval);
-  second = 60;
+  if (questionNumber < questions.length) {
+    const currentDifficulty = questions[questionNumber].difficulty;
+    switch (currentDifficulty) {
+      case "easy":
+        second = 30;
+        break;
+      case "medium":
+        second = 60;
+        break;
+      case "hard":
+        second = 120;
+        break;
+    }
+  }
   interval = setInterval(() => {
     if (second > 0) {
-      console.log(second);
-      innerTimer();
       second--;
+      innerTimer();
+      console.log(second);
     } else {
       timeOut();
     }
@@ -944,16 +950,15 @@ const counter = () => {
 const innerTimer = () => {
   const innerTimerSpace = document.getElementById("inner-timer");
   innerTimerSpace.innerHTML = `<p>
-  SECONDI <br /> <span id="span">
+  SECONDS <br /> <span id="span">
   ${second} </span> <br>
-  RIMANENTI
+  REMAINING
 </p>`;
 };
 
 const stopEventHandler = () => {
   questionGen();
-  timer();
-  innerTimer();
+  counter();
 };
 
 const eventHandler = (event) => {
@@ -962,6 +967,9 @@ const eventHandler = (event) => {
   checkAnswer(currentQuestion, answer);
   counter();
   setTimeout(stopEventHandler, 1000);
+  counter();
+  innerTimer();
+  timer();
 };
 
 const timeOut = () => {
@@ -1017,7 +1025,6 @@ const difficultyChoice = (event) => {
   const difficultySelected = document.getElementById("difficulty-choice").value;
   const quantitySelected = document.getElementById("quantity-choice").value;
   localStorage.setItem("quantitySelected", quantitySelected);
-  console.log(difficultySelected, quantitySelected);
   if (difficultySelected === "easy") {
     for (let i = 0; i < parseInt(quantitySelected); i++) {
       const currentQuestion = easyQuestions[i];
@@ -1052,9 +1059,10 @@ const difficultyChoice = (event) => {
   </svg>
   <div id="inner-timer"></div>`;
     answerRandomizer(questions);
-    questionGen();
-    timer();
+    const timer = document.getElementById("timer-circle");
+    timer.style.animationDuration = "31s";
     counter();
+    questionGen();
     innerTimer();
   } else if (difficultySelected === "medium") {
     for (let i = 0; i < parseInt(quantitySelected); i++) {
@@ -1091,7 +1099,6 @@ const difficultyChoice = (event) => {
   <div id="inner-timer"></div>`;
     answerRandomizer(questions);
     questionGen();
-    timer();
     counter();
     innerTimer();
   } else if (difficultySelected === "hard") {
@@ -1129,7 +1136,8 @@ const difficultyChoice = (event) => {
   <div id="inner-timer"></div>`;
     answerRandomizer(questions);
     questionGen();
-    timer();
+    const timer = document.getElementById("timer-circle");
+    timer.style.animationDuration = "121s";
     counter();
     innerTimer();
   }
