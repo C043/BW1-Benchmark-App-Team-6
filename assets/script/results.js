@@ -1,9 +1,13 @@
 
+// Recupera userScore dal localStorage
 const userScore = localStorage.getItem('userScore') || 0;
 
-const risposteCorrette = userScore
+// Recupera quantitySelected dal localStorage
+const quantitySelected = localStorage.getItem('quantitySelected') || 0;
 
-const risposteSbagliate = 10 - risposteCorrette;
+const risposteCorrette = userScore;
+
+const risposteSbagliate = quantitySelected - risposteCorrette;
 
 console.log(risposteCorrette)
 
@@ -19,7 +23,7 @@ const data = {
         'correct answers'],
     datasets: [{
         label: 'Answers',
-        data: [risposteCorrette, risposteSbagliate],
+        data: [risposteSbagliate, risposteCorrette],
         backgroundColor: [
             'rgb(245, 48, 48234)',
             'rgb(48, 198, 224)',
@@ -66,13 +70,13 @@ const rateDOM = function (Risposte) {
     correct.innerHTML = `
     <h1>Correct</h1>
     <strong><span id="perc-result">${Result.correctRate}</span>%</strong>
-    <h6 class="result-questions"><span id="span-result">${Result.correctRate / 10}</span> / 10 questions</h6>`
+    <h6 class="result-questions"><span id="span-result">${Result.correctRate / 10}</span> / ${quantitySelected} questions</h6>`
 
     const incorrect = document.querySelector('#wrongDiv .wrong-content')
     incorrect.innerHTML = `
     <h1>Wrong</h1>
     <strong><span id="perc-result">${Result.incorrectRate}</span>%</strong>
-    <h6 class="result-questions"><span id="span-result">${Result.incorrectRate / 10}</span> / 10 questions</h6>`
+    <h6 class="result-questions"><span id="span-result">${Result.incorrectRate / 10}</span> / ${quantitySelected} questions</h6>`
 
 }
 
