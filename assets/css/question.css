@@ -36,7 +36,7 @@ h1 {
   border: 2px rgba(255, 255, 255, 0) solid;
   width: 50%;
   margin: auto;
-  height: 15em;
+  height: 20em;
 }
 
 .button-container {
@@ -72,12 +72,12 @@ h1 {
 }
 footer {
   text-align: center;
-  padding-top: 10%;
+  padding-top: 5%;
   margin-top: 5%;
   height: 4rem;
 }
 #inner-timer p {
-  font-size: 1.2vw;
+  font-size: 1vw;
 }
 
 p {
