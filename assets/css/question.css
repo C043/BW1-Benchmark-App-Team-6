@@ -38,7 +38,7 @@ h1 {
 
 #risposte {
   border: 2px rgba(255, 255, 255, 0) solid;
-  width: 50%;
+  width: 40%;
   margin: auto;
   height: 20em;
 }
@@ -148,7 +148,6 @@ p {
   margin: 5px;
   text-align: center;
   box-shadow: 1px 1px 20px 5px #00ffff;
-
 }
 
 #container #btn {
@@ -192,11 +191,9 @@ p {
 #difficulty-choice option {
   color: #d20094;
   padding: 5px;
-  background: #0C103A;
+  background: #0c103a;
   border: none;
 }
-
-
 
 #quantity-choice {
   width: 100px;
@@ -214,7 +211,6 @@ p {
 
 #quantity-choice option {
   color: #d20094;
-  background: #0C103A;
+  background: #0c103a;
   padding: 5px;
 }
-
