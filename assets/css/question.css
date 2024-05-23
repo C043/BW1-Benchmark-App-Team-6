@@ -125,3 +125,20 @@ p {
     stroke-dasharray: 0 100;
   }
 }
+
+#form {
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  display: inline-block;
+}
+
+#form label {
+  display: block;
+  padding: 10%;
+}
+
+#form button {
+  display: block;
+}
+
+
