@@ -70,13 +70,13 @@ const rateDOM = function (Risposte) {
     correct.innerHTML = `
     <h1>Correct</h1>
     <strong><span id="perc-result">${Result.correctRate}</span>%</strong>
-    <h6 class="result-questions"><span id="span-result">${Result.correctRate / 10}</span> / ${quantitySelected} questions</h6>`
+    <h6 class="result-questions"><span id="span-result">${risposteCorrette}</span> / ${quantitySelected} questions</h6>`
 
     const incorrect = document.querySelector('#wrongDiv .wrong-content')
     incorrect.innerHTML = `
     <h1>Wrong</h1>
     <strong><span id="perc-result">${Result.incorrectRate}</span>%</strong>
-    <h6 class="result-questions"><span id="span-result">${Result.incorrectRate / 10}</span> / ${quantitySelected} questions</h6>`
+    <h6 class="result-questions"><span id="span-result">${risposteSbagliate}</span> / ${quantitySelected} questions</h6>`
 
 }
 
