@@ -1,17 +1,34 @@
-const starInputs = document.querySelectorAll("input:not(#comment)");
-const showValue = document.querySelector("#rating-value");
-const moreInfoButton = document.getElementById("moreInfo");
-starInputs.forEach((star) => {
-  star.addEventListener("click", function () {
-    const value = this.value;
-    showValue.innerText = value + "/10";
-    console.log(showValue.innerText);
-  });
-});
+document.addEventListener("DOMContentLoaded", function () {
+  const starInputs = document.querySelectorAll("input:not(#comment)");
+  const showValue = document.querySelector("#rating-value");
+  const sendComment = document.getElementById("sendFeedback");
+  const form = document.getElementById("commentFeedback");
+  const fullContainer = document.querySelector(".fullContainer");
 
-const form = document.getElementById("commentFeedback");
-const sendComment = document.getElementById("sendFeedback");
-sendComment.addEventListener("click", () => {
-  form.reset();
-  showValue.innerText = "";
+  let selectedRating = null;
+
+  starInputs.forEach((star) => {
+    star.addEventListener("click", function () {
+      selectedRating = this.value;
+      showValue.innerText = selectedRating + "/10";
+      console.log(showValue.innerText);
+    });
+  });
+
+  sendComment.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    if (selectedRating !== null) {
+      form.reset();
+      showValue.innerText = "";
+
+      if (selectedRating < 3) {
+        fullContainer.innerHTML = `<p class="feedBack">Mi dispiace</p>`;
+      } else if (selectedRating >= 3 && selectedRating < 7) {
+        fullContainer.innerHTML = `<p class="feedBack">Speriamo vada meglio la prossima volta</p>`;
+      } else if (selectedRating >= 7 && selectedRating <= 10) {
+        fullContainer.innerHTML = `<p class="feedBack">Grazie per il feedback</p>`;
+      }
+    }
+  });
 });

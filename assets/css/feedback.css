@@ -126,3 +126,10 @@ a {
   filter: sepia(55%) saturate(7500%) hue-rotate(105deg) brightness(125%)
     contrast(105%);
 }
+p.feedBack {
+  font-family: "Outfit", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 5.5rem;
+}
