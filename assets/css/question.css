@@ -28,7 +28,7 @@ img {
 h1 {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
-  font-size: clamp(1rem, 2vw, 3rem);
+  font-size: 2vw;
   color: white;
   font-style: normal;
 }
@@ -77,19 +77,19 @@ footer {
   height: 4rem;
 }
 #inner-timer p {
-  font-size: clamp(1rem, 2em, 3em);
+  font-size: 1.2vw;
 }
 
 p {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
-  font-size: 1em;
+  font-size: 1.5vw;
 
   color: white;
 }
 
 #span {
-  font-size: clamp(1rem, 2em, 10em);
+  font-size: 3vw;
   text-align: center;
 }
 #timer {
@@ -105,6 +105,7 @@ p {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 0.5vw;
   text-align: center;
   border-radius: 50%;
   height: 30%;
