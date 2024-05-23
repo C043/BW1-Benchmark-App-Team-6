@@ -115,16 +115,15 @@ const answerRandomizer = (array) => {
 };
 
 const checkAnswer = (question, answer) => {
-  /*   if (answer === question.correct_answer) {
-      console.log("Complimenti");
-      userScore++;
-      console.log(userScore);
-    } else {
-      console.log("sbagliato");
-    } */
+  /* if (answer === question.correct_answer) {
+    console.log("Complimenti");
+    userScore++;
+    console.log(userScore);
+  } else {
+    console.log("sbagliato");
+  } */
 
-  // Dopo aver aggiornato userScore
-  if (answer.innerText === question.correct_answer) {
+  if (answer === question.correct_answer) {
     console.log("Complimenti");
     userScore++;
     const answerSpace = document.getElementById("risposte");
@@ -132,15 +131,16 @@ const checkAnswer = (question, answer) => {
     answerSpace.innerHTML = "<p>Corretta! :)</p>";
     answer.innerText = "Corretta :)";
     console.log(userScore);
-
+  
     // Salva userScore nel localStorage
-    localStorage.setItem("userScore", userScore);
+    localStorage.setItem('userScore', userScore);
   } else {
     const answerSpace = document.getElementById("risposte");
     answerSpace.innerHTML = "";
     answerSpace.innerHTML = "<p>Sbagliata :(</p>";
     console.log("sbagliato");
   }
+  
 };
 
 const timer = () => {

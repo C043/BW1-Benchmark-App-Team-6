@@ -1,7 +1,8 @@
 
+// Recupera userScore dal localStorage
 const userScore = localStorage.getItem('userScore') || 0;
 
-const risposteCorrette = userScore
+const risposteCorrette = userScore;
 
 const risposteSbagliate = 10 - risposteCorrette;
 
@@ -19,7 +20,7 @@ const data = {
         'correct answers'],
     datasets: [{
         label: 'Answers',
-        data: [risposteCorrette, risposteSbagliate],
+        data: [risposteSbagliate, risposteCorrette],
         backgroundColor: [
             'rgb(245, 48, 48234)',
             'rgb(48, 198, 224)',
