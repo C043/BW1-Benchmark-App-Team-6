@@ -2,6 +2,9 @@
 // Recupera userScore dal localStorage
 const userScore = localStorage.getItem('userScore') || 0;
 
+// Recupera quantitySelected dal localStorage
+const quantitySelected = localStorage.getItem('quantitySelected') || 0;
+
 const risposteCorrette = userScore;
 
 const risposteSbagliate = 10 - risposteCorrette;
