@@ -56,7 +56,7 @@ body {
 }
 
 .rules b {
-    font-weight:600;
+    font-weight: 600;
 }
 
 
@@ -82,7 +82,7 @@ body {
 
 .checked {
     display: inline-block;
-    
+
     width: 1rem;
     height: 1rem;
     border-style: solid;
@@ -104,24 +104,7 @@ body {
     font-size: larger;
 }
 
-#btn #proceed {
-    /*
-    background-color: #00ffff;
-    padding: 15px;
-    border: 1px solid #00ffff;
-    color: black;
-    width: 200px;
-    text-align: center;
-    font-family: "Outfit", sans-serif;
-    font-size: large;
-    font-weight: bolder;
-    -webkit-box-shadow: inset -1px -1px 19px 0px #00FFFF, 0px 4px 41px -9px #00FFFF;
-    -moz-box-shadow: inset -1px -1px 19px 0px #00FFFF, 0px 4px 41px -9px #00FFFF;
-    -o-box-shadow: inset -1px -1px 19px 0px #00FFFF, 0px 4px 41px -9px #00FFFF;
-    box-shadow: inset -1px -1px 19px 0px #00FFFF, 0px 4px 41px -9px #00FFFF;
-    -webkit-transition: all 150ms ease-in-out;
-    transition: all 150ms ease-in-out;*/
-
+#btn .proceed {
     color: #040b4b;
     font-family: "Outfit", sans-serif;
     background-color: #00ffff;
@@ -132,9 +115,27 @@ body {
     cursor: pointer;
     font-weight: bolder;
     width: 200px;
+    margin-bottom: 30%;
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
-#btn #proceed:hover {
+/*
+#btn .proceed:hover {
     box-shadow: 0 0 30px 0 #0ec9c9 inset, 0 0 30px 4px #1291cc;
     color: white;
-  }
+}*/
+
+#btn .goTo {
+    box-shadow: 0 0 30px 0 #0ec9c9 inset, 0 0 30px 4px #1291cc;
+    color: white;
+    font-family: "Outfit", sans-serif;
+    background-color: #00ffff;
+    padding: 13px;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bolder;
+    width: 200px;
+    margin-bottom: 30%;
+}
