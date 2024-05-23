@@ -918,23 +918,16 @@ const timer = () => {
 };
 
 let second = 60;
-let interval = setInterval(() => {
-  if (second > 0) {
-    second--;
-    console.log(second);
-  } else {
-    timeOut();
-  }
-}, 1000);
+let interval = setInterval(() => {}, 1000);
 
-const counter = () => {
+const counter = (seconds) => {
   clearInterval(interval);
-  second = 60;
+  second = seconds;
   interval = setInterval(() => {
     if (second > 0) {
-      console.log(second);
-      innerTimer();
       second--;
+      innerTimer();
+      console.log(second);
     } else {
       timeOut();
     }
@@ -1053,8 +1046,9 @@ const difficultyChoice = (event) => {
   <div id="inner-timer"></div>`;
     answerRandomizer(questions);
     questionGen();
-    timer();
-    counter();
+    const timer = document.getElementById("timer-circle");
+    timer.style.animationDuration = "31s";
+    counter(30);
     innerTimer();
   } else if (difficultySelected === "medium") {
     for (let i = 0; i < parseInt(quantitySelected); i++) {
@@ -1091,8 +1085,7 @@ const difficultyChoice = (event) => {
   <div id="inner-timer"></div>`;
     answerRandomizer(questions);
     questionGen();
-    timer();
-    counter();
+    counter(60);
     innerTimer();
   } else if (difficultySelected === "hard") {
     for (let i = 0; i < parseInt(quantitySelected); i++) {
@@ -1129,8 +1122,9 @@ const difficultyChoice = (event) => {
   <div id="inner-timer"></div>`;
     answerRandomizer(questions);
     questionGen();
-    timer();
-    counter();
+    const timer = document.getElementById("timer-circle");
+    timer.style.animationDuration = "121s";
+    counter(120);
     innerTimer();
   }
 };
