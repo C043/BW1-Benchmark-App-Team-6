@@ -66,7 +66,7 @@ h1 {
   height: 5em;
 }
 
-.button:hover {
+.button-effect:hover {
   outline-color: transparent;
   outline-style: solid;
   background-color: #d20094;
@@ -213,4 +213,12 @@ p {
   color: #d20094;
   background: #0c103a;
   padding: 5px;
+}
+
+.right {
+  background-color: green;
+}
+
+.wrong {
+  background-color: red;
 }
