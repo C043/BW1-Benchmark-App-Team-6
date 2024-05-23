@@ -922,17 +922,19 @@ let interval = setInterval(() => {}, 1000);
 
 const counter = () => {
   clearInterval(interval);
-  const currentDifficulty = questions[questionNumber].difficulty;
-  switch (currentDifficulty) {
-    case "easy":
-      second = 30;
-      break;
-    case "medium":
-      second = 60;
-      break;
-    case "hard":
-      second = 120;
-      break;
+  if (questionNumber < questions.length) {
+    const currentDifficulty = questions[questionNumber].difficulty;
+    switch (currentDifficulty) {
+      case "easy":
+        second = 30;
+        break;
+      case "medium":
+        second = 60;
+        break;
+      case "hard":
+        second = 120;
+        break;
+    }
   }
   interval = setInterval(() => {
     if (second > 0) {

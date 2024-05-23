@@ -29,13 +29,14 @@
     </header>
     <main>
       <form action="" id="form">
-        <label for="difficulty">Che difficoltà vuoi?</label>
+        <div id="container">
+        <label for="difficulty">DIFFICULTY LEVEL</label>
         <select name="difficulty" id="difficulty-choice" required>
-          <option value="easy">Facile</option>
-          <option value="medium">Medio</option>
-          <option value="hard">Difficile</option>
+          <option value="easy">EASY</option>
+          <option value="medium">MEDIUM</option>
+          <option value="hard">HARD</option>
         </select>
-        <label for="quantità">Quante domande vuoi?</label>
+        <label for="quantità">HOW MANY QUESTIONS</label>
         <select name="quantità" id="quantity-choice" required>
           <option value="5">5</option>
           <option value="10">10</option>
@@ -44,7 +45,10 @@
           <option value="25">25</option>
           <option value="30">30</option>
         </select>
+        <div id="btn">
         <button id="difficulty-button">Avvia!</button>
+      </div>
+      </div>
       </form>
       <div id="domande"></div>
       <div id="risposte"></div>
