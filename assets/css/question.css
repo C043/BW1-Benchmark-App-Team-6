@@ -43,23 +43,18 @@ h1 {
   display: inline-block;
   width: 23em;
   margin: 5px;
-  /*  padding: 10px; */
+
   border-radius: 3em;
-  border-width: 3em;
-  border: 5px solid slhsl(0, 0%, 100%);
+  border: 5px solid hsla(0, 1%, 100%, 0.8);
+  box-shadow: #fff;
+  border-bottom: rgb(255, 255, 255);
 }
 .button {
   font-family: "Outfit", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: normal;
-  text-align: center;
-  display: inline-block;
-  border: solid 3px;
-  color: #fff;
-  background-color: hsla(0, 0%, 100%, 0.24);
-  border-width: 6px;
-  border-style: solid;
-  border-color: transparent;
+  color: #ffffff;
+  background-color: hsla(290, 71%, 77%, 0.24);
+  border: 3px solid hsla(290, 71%, 77%, 0.171);
+
   border-radius: 55px;
   padding: 2px;
   width: 28em;
@@ -71,8 +66,10 @@ h1 {
   outline-color: transparent;
   outline-style: solid;
   background-color: #d20094;
-  background: radial-gradient(#d20094, hwb(318 2% 58% / 0.637));
+  border: 3px solid hsl(318, 97%, 40%);
+  background: linear-gradient(hsl(318, 100%, 50%), hsl(318, 98%, 21%));
 }
+
 footer {
   text-align: center;
   padding-top: 5%;
