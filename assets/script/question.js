@@ -955,7 +955,6 @@ const innerTimer = () => {
 const stopEventHandler = () => {
   questionGen();
   timer();
-  counter();
   innerTimer();
 };
 
@@ -963,7 +962,8 @@ const eventHandler = (event) => {
   const currentQuestion = questions[questionNumber - 1];
   const answer = event.target;
   checkAnswer(currentQuestion, answer);
-  setTimeout(stopEventHandler, 2000);
+  counter();
+  setTimeout(stopEventHandler, 1000);
 };
 
 const timeOut = () => {
@@ -974,7 +974,7 @@ const timeOut = () => {
 };
 
 const questionGen = () => {
-  if (questionNumber < 10) {
+  if (questionNumber < questions.length) {
     const questionSpace = document.getElementById("domande");
     const answerSpace = document.getElementById("risposte");
     questionSpace.innerHTML = "";
@@ -1002,7 +1002,7 @@ const questionGen = () => {
     currentQuestionSpace.innerHTML = "";
     const p = document.createElement("p");
     const pSpan = document.createElement("span");
-    pSpan.innerText = " /" + questions.length;
+    pSpan.innerText = " / " + questions.length;
     p.innerText = "QUESTION " + (questionNumber + 1);
     p.appendChild(pSpan);
     currentQuestionSpace.appendChild(p);
@@ -1018,6 +1018,7 @@ const difficultyChoice = (event) => {
   const formSpace = document.getElementById("form");
   const difficultySelected = document.getElementById("difficulty-choice").value;
   const quantitySelected = document.getElementById("quantity-choice").value;
+  localStorage.setItem("quantitySelected", quantitySelected);
   console.log(difficultySelected, quantitySelected);
   if (difficultySelected === "easy") {
     for (let i = 0; i < parseInt(quantitySelected); i++) {
