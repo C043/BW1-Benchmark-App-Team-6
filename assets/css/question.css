@@ -43,11 +43,11 @@ h1 {
   display: inline-block;
   width: 23em;
   margin: 5px;
-  padding: 10px;
+  /*  padding: 10px; */
   border-radius: 3em;
   border-width: 3em;
+  border: 5px solid white;
 }
-
 .button {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
@@ -57,6 +57,11 @@ h1 {
   border: solid 3px;
   color: #fff;
   background-color: rgba(255, 255, 255, 0.274);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 0.4rem;
+
   border-radius: 55px;
   padding: 2px;
   width: 28em;
