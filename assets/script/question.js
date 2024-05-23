@@ -124,18 +124,23 @@ const checkAnswer = (question, answer) => {
     } */
 
   // Dopo aver aggiornato userScore
-  if (answer === question.correct_answer) {
+  if (answer.innerText === question.correct_answer) {
     console.log("Complimenti");
     userScore++;
+    const answerSpace = document.getElementById("risposte");
+    answerSpace.innerHTML = "";
+    answerSpace.innerHTML = "<p>Corretta! :)</p>";
+    answer.innerText = "Corretta :)";
     console.log(userScore);
 
     // Salva userScore nel localStorage
-    localStorage.setItem('userScore', userScore);
+    localStorage.setItem("userScore", userScore);
   } else {
+    const answerSpace = document.getElementById("risposte");
+    answerSpace.innerHTML = "";
+    answerSpace.innerHTML = "<p>Sbagliata :(</p>";
     console.log("sbagliato");
   }
-
-
 };
 
 const timer = () => {
@@ -179,14 +184,18 @@ const innerTimer = () => {
 </p>`;
 };
 
-const eventHandler = (event) => {
-  const currentQuestion = questions[questionNumber - 1];
-  const answer = event.target.innerText;
-  checkAnswer(currentQuestion, answer);
+const stopEventHandler = () => {
   questionGen();
   timer();
   counter();
   innerTimer();
+};
+
+const eventHandler = (event) => {
+  const currentQuestion = questions[questionNumber - 1];
+  const answer = event.target;
+  checkAnswer(currentQuestion, answer);
+  setTimeout(stopEventHandler, 2000);
 };
 
 const timeOut = () => {
