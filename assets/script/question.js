@@ -921,8 +921,8 @@ let second = 60;
 let interval = setInterval(() => {}, 1000);
 
 const counter = () => {
-  const currentDifficulty = questions[questionNumber].difficulty;
   clearInterval(interval);
+  const currentDifficulty = questions[questionNumber].difficulty;
   switch (currentDifficulty) {
     case "easy":
       second = 30;
@@ -936,7 +936,6 @@ const counter = () => {
   }
   interval = setInterval(() => {
     if (second > 0) {
-      innerTimer();
       second--;
       innerTimer();
       console.log(second);
@@ -957,8 +956,7 @@ const innerTimer = () => {
 
 const stopEventHandler = () => {
   questionGen();
-  timer();
-  innerTimer();
+  counter();
 };
 
 const eventHandler = (event) => {
@@ -967,6 +965,9 @@ const eventHandler = (event) => {
   checkAnswer(currentQuestion, answer);
   counter();
   setTimeout(stopEventHandler, 1000);
+  counter();
+  innerTimer();
+  timer();
 };
 
 const timeOut = () => {
@@ -1022,7 +1023,6 @@ const difficultyChoice = (event) => {
   const difficultySelected = document.getElementById("difficulty-choice").value;
   const quantitySelected = document.getElementById("quantity-choice").value;
   localStorage.setItem("quantitySelected", quantitySelected);
-  console.log(difficultySelected, quantitySelected);
   if (difficultySelected === "easy") {
     for (let i = 0; i < parseInt(quantitySelected); i++) {
       const currentQuestion = easyQuestions[i];
@@ -1057,10 +1057,10 @@ const difficultyChoice = (event) => {
   </svg>
   <div id="inner-timer"></div>`;
     answerRandomizer(questions);
-    questionGen();
     const timer = document.getElementById("timer-circle");
     timer.style.animationDuration = "31s";
     counter();
+    questionGen();
     innerTimer();
   } else if (difficultySelected === "medium") {
     for (let i = 0; i < parseInt(quantitySelected); i++) {
