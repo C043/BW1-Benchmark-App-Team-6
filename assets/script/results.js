@@ -63,6 +63,9 @@ const Result = rate(risposteCorrette, risposteSbagliate)
 console.log(Result)
 
 
+if(Result.correctRate >= 60) {
+    launchConfetti()
+}
 /* Inserisco i risultati all'interno del mio DOM in percentuale */
 
 const rateDOM = function (Risposte) {
@@ -106,7 +109,40 @@ const textResult = function () {
 textResult()
 
 
+
+
+/* funzioni da utilizzare */
+
+
 function nextPage () {
     window.location.href = './feedback.html';
 }
 
+
+
+function launchConfetti() {
+    const duration = 5 * 1000;
+    const end = Date.now() + duration;
+    const colors = ['#bb0000', '#ffffff'];
+
+    (function frame() {
+        confetti({
+            particleCount: 2,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: colors
+        });
+        confetti({
+            particleCount: 2,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: colors
+        });
+
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
+    })();
+}
