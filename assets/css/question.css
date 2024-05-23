@@ -2,11 +2,11 @@ body {
   background-image: url(../images/bg.jpg);
   background-size: cover;
   place-items: center;
-  background-repeat: no-repeat;
 }
 
 main {
   text-align: center;
+  margin-top: 3%;
 }
 #logo {
   padding: 40px 70px;
@@ -28,30 +28,24 @@ img {
 h1 {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
-  font-size: 60px;
+  font-size: clamp(1rem, 2vw, 3rem);
   color: white;
   font-style: normal;
 }
 #risposte {
   border: 2px rgba(255, 255, 255, 0) solid;
-  width: 70%;
+  width: 50%;
   margin: auto;
   height: 15em;
 }
 
 .button-container {
   display: inline-block;
-  width: 25em;
+  width: 23em;
   margin: 5px;
   padding: 10px;
-  border-radius: 60px;
-  border-width: 10px;
-  border: 2px solid white;
-
-  background: linear-gradient(
-    rgba(255, 255, 255, 0.186),
-    rgba(255, 255, 255, 0.233)
-  );
+  border-radius: 3em;
+  border-width: 3em;
 }
 
 .button {
@@ -60,33 +54,43 @@ h1 {
   font-weight: normal;
   text-align: center;
   display: inline-block;
-  border: none;
+  border: solid 3px;
   color: #fff;
-  background-color: hsla(0, 18%, 97%, 0.137);
+  background-color: rgba(255, 255, 255, 0.274);
   border-radius: 55px;
   padding: 2px;
-  width: 30em;
+  width: 28em;
   cursor: pointer;
-  height: 5em; /* lavora sul gradiente */
-  /* 
-  box-shadow: 2px 2px 2px #dedede, -2px -2px 2px #dedede, 2px -2px 2px #dedede,
-    -2px 2px 2px #dedede;
-  filter: progid:DXImageTransform.Microsoft.Shadow(color='#dedede', Direction=135, Strength=10); */
+  height: 5em;
+}
+
+.button:hover {
+  outline-color: transparent;
+  outline-style: solid;
+  background-color: #d20094;
+  background: radial-gradient(#d20094, hwb(318 0% 60%));
 }
 footer {
   text-align: center;
-  position: absolute;
-
-  width: 100%;
+  padding-top: 10%;
+  margin-top: 5%;
   height: 4rem;
 }
+#inner-timer p {
+  font-size: clamp(1rem, 2em, 3em);
+}
+
 p {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
-  /*   font-weight: <weight>; */
-  font-style: normal;
-  font-size: 16px;
+  font-size: 1em;
+
   color: white;
+}
+
+#span {
+  font-size: clamp(1rem, 2em, 10em);
+  text-align: center;
 }
 #timer {
   position: relative;
@@ -98,14 +102,13 @@ p {
 
 #inner-timer {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 100%;
   text-align: center;
   border-radius: 50%;
-  height: 60%;
-  width: 60%;
+  height: 30%;
+  width: 100%;
   margin: auto;
 }
 

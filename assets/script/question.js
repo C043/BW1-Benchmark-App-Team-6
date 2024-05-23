@@ -130,12 +130,10 @@ const checkAnswer = (question, answer) => {
     console.log(userScore);
 
     // Salva userScore nel localStorage
-    localStorage.setItem('userScore', userScore);
+    localStorage.setItem("userScore", userScore);
   } else {
     console.log("sbagliato");
   }
-
-
 };
 
 const timer = () => {
@@ -173,8 +171,8 @@ const counter = () => {
 const innerTimer = () => {
   const innerTimerSpace = document.getElementById("inner-timer");
   innerTimerSpace.innerHTML = `<p>
-  SECONDI <br />
-  ${second} <br>
+  SECONDI <br /> <span id="span">
+  ${second} </span> <br>
   RIMANENTI
 </p>`;
 };
