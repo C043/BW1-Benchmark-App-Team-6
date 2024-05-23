@@ -891,13 +891,12 @@ const checkAnswer = (question, answer) => {
     console.log("sbagliato");
   } */
 
-  if (answer === question.correct_answer) {
+  if (answer.innerText === question.correct_answer) {
     console.log("Complimenti");
     userScore++;
     const answerSpace = document.getElementById("risposte");
     answerSpace.innerHTML = "";
     answerSpace.innerHTML = "<p>Corretta! :)</p>";
-    answer.innerText = "Corretta :)";
     console.log(userScore);
 
     // Salva userScore nel localStorage
