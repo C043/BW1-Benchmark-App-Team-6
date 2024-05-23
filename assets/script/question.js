@@ -920,11 +920,23 @@ const timer = () => {
 let second = 60;
 let interval = setInterval(() => {}, 1000);
 
-const counter = (seconds) => {
+const counter = () => {
+  const currentDifficulty = questions[questionNumber].difficulty;
   clearInterval(interval);
-  second = seconds;
+  switch (currentDifficulty) {
+    case "easy":
+      second = 30;
+      break;
+    case "medium":
+      second = 60;
+      break;
+    case "hard":
+      second = 120;
+      break;
+  }
   interval = setInterval(() => {
     if (second > 0) {
+      innerTimer();
       second--;
       innerTimer();
       console.log(second);
@@ -1048,7 +1060,7 @@ const difficultyChoice = (event) => {
     questionGen();
     const timer = document.getElementById("timer-circle");
     timer.style.animationDuration = "31s";
-    counter(30);
+    counter();
     innerTimer();
   } else if (difficultySelected === "medium") {
     for (let i = 0; i < parseInt(quantitySelected); i++) {
@@ -1085,7 +1097,7 @@ const difficultyChoice = (event) => {
   <div id="inner-timer"></div>`;
     answerRandomizer(questions);
     questionGen();
-    counter(60);
+    counter();
     innerTimer();
   } else if (difficultySelected === "hard") {
     for (let i = 0; i < parseInt(quantitySelected); i++) {
@@ -1124,7 +1136,7 @@ const difficultyChoice = (event) => {
     questionGen();
     const timer = document.getElementById("timer-circle");
     timer.style.animationDuration = "121s";
-    counter(120);
+    counter();
     innerTimer();
   }
 };
