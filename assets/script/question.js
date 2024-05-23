@@ -896,7 +896,7 @@ const checkAnswer = (question, answer) => {
     userScore++;
     const answerSpace = document.getElementById("risposte");
     answerSpace.innerHTML = "";
-    answerSpace.innerHTML = "<p>Corretta! :)</p>";
+    answerSpace.innerHTML = "<p>Correct! :)</p>";
     console.log(userScore);
 
     // Salva userScore nel localStorage
@@ -904,7 +904,7 @@ const checkAnswer = (question, answer) => {
   } else {
     const answerSpace = document.getElementById("risposte");
     answerSpace.innerHTML = "";
-    answerSpace.innerHTML = "<p>Sbagliata :(</p>";
+    answerSpace.innerHTML = "<p>Wrong! :(</p>";
     console.log("sbagliato");
   }
 };
@@ -944,9 +944,9 @@ const counter = () => {
 const innerTimer = () => {
   const innerTimerSpace = document.getElementById("inner-timer");
   innerTimerSpace.innerHTML = `<p>
-  SECONDI <br /> <span id="span">
+  SECONDS <br /> <span id="span">
   ${second} </span> <br>
-  RIMANENTI
+  REMAINING
 </p>`;
 };
 
