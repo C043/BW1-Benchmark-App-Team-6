@@ -52,8 +52,8 @@ const myChart = new Chart(ctx, config);
 /* trasformo il risultato in percentuale */
 
 const rate = function (correct, incorrect) {
-    const correctRate = (correct / 10) * 100
-    const incorrectRate = (incorrect / 10) * 100
+    const correctRate = (correct / quantitySelected) * 100
+    const incorrectRate = (incorrect / quantitySelected) * 100
 
     return { correctRate: correctRate, incorrectRate: incorrectRate }
 }
