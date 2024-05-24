@@ -5,6 +5,7 @@ body {
   font-family: "Inter", sans-serif;
   margin: 3%;
   height: 100%;
+  overflow: hidden;
 }
 
 .logo {
@@ -12,7 +13,7 @@ body {
 }
 
 .container {
-  margin: 70px;
+  margin: 50px 70px 70px 70px;
 }
 
 #title {
