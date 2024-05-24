@@ -863,6 +863,8 @@ const questions = [];
 
 let userScore = 0;
 
+let wrongAnswerCounter = 0;
+
 let questionNumber = 0;
 
 const answerRandomizer = (array) => {
@@ -883,14 +885,6 @@ const answerRandomizer = (array) => {
 };
 
 const checkAnswer = (question, answer) => {
-  /* if (answer === question.correct_answer) {
-    console.log("Complimenti");
-    userScore++;
-    console.log(userScore);
-  } else {
-    console.log("sbagliato");
-  } */
-
   const answers = document.getElementsByTagName("button");
   if (answer.innerText === question.correct_answer) {
     console.log("Complimenti");
@@ -910,6 +904,8 @@ const checkAnswer = (question, answer) => {
     // Salva userScore nel localStorage
     localStorage.setItem("userScore", userScore);
   } else {
+    wrongAnswerCounter++;
+    localStorage.setItem("wrongAnswers", wrongAnswerCounter);
     for (let i = 0; i < answers.length; i++) {
       const currentButton = answers[i];
       if (currentButton.innerText === question.correct_answer) {
@@ -987,7 +983,21 @@ const eventHandler = (event) => {
 };
 
 const timeOut = () => {
-  questionGen();
+  wrongAnswerCounter++;
+  localStorage.setItem("wrongAnswers", wrongAnswerCounter);
+  const currentQuestion = questions[questionNumber - 1];
+  const answers = document.getElementsByTagName("button");
+  for (let i = 0; i < answers.length; i++) {
+    const currentButton = answers[i];
+    if (currentButton.innerText === currentQuestion.correct_answer) {
+      currentButton.classList.add("right");
+      currentButton.classList.remove("button-effect");
+    } else {
+      currentButton.classList.add("wrong");
+      currentButton.classList.remove("button-effect");
+    }
+  }
+  setTimeout(stopEventHandler, 1000);
   timer();
   counter();
   innerTimer();
