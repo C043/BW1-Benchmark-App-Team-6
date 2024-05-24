@@ -868,6 +868,7 @@ let userScore = 0;
 localStorage.setItem("userScore", userScore);
 
 let wrongAnswerCounter = 0;
+localStorage.setItem("wrongAnswers", wrongAnswerCounter);
 
 let questionNumber = 0;
 
