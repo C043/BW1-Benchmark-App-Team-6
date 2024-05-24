@@ -1046,6 +1046,16 @@ const difficultyChoice = (event) => {
       questions.push(currentQuestion);
     }
     formSpace.remove();
+    const main = document.querySelector("main");
+    const body = document.querySelector("body");
+    const questionSpace = document.createElement("div");
+    questionSpace.id = "domande";
+    const answerSpace = document.createElement("div");
+    answerSpace.id = "risposte";
+    const footer = document.createElement("footer");
+    footer.id = "current-question";
+    main.append(questionSpace, answerSpace);
+    body.appendChild(footer);
     timerSpace.innerHTML = `<svg width="100%" height="100%" viewBox="0 0 42 42" class="donut">
     <circle
       class="donut-ring"
@@ -1085,6 +1095,16 @@ const difficultyChoice = (event) => {
       questions.push(currentQuestion);
     }
     formSpace.remove();
+    const main = document.querySelector("main");
+    const body = document.querySelector("body");
+    const questionSpace = document.createElement("div");
+    questionSpace.id = "domande";
+    const answerSpace = document.createElement("div");
+    answerSpace.id = "risposte";
+    const footer = document.createElement("footer");
+    footer.id = "current-question";
+    main.append(questionSpace, answerSpace);
+    body.appendChild(footer);
     timerSpace.innerHTML = `<svg width="100%" height="100%" viewBox="0 0 42 42" class="donut">
     <circle
       class="donut-ring"
@@ -1122,6 +1142,16 @@ const difficultyChoice = (event) => {
       questions.push(currentQuestion);
     }
     formSpace.remove();
+    const main = document.querySelector("main");
+    const body = document.querySelector("body");
+    const questionSpace = document.createElement("div");
+    questionSpace.id = "domande";
+    const answerSpace = document.createElement("div");
+    answerSpace.id = "risposte";
+    const footer = document.createElement("footer");
+    footer.id = "current-question";
+    main.append(questionSpace, answerSpace);
+    body.appendChild(footer);
     timerSpace.innerHTML = `<svg width="100%" height="100%" viewBox="0 0 42 42" class="donut">
     <circle
       class="donut-ring"
