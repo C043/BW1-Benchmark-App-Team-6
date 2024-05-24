@@ -221,13 +221,13 @@ p {
 }
 
 .right {
-  background-color: green;
+  background-color: #00ffffa9;
 }
-
+/*rgba(0, 128, 0, 0.726)*/
 .wrong {
-  background-color: red;
+  background-color: #d20093a1;
 }
-
+/*rgba(255, 0, 0, 0.568)*/
 #current-question p span {
   color: #d20094;
 }
