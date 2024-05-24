@@ -6,7 +6,8 @@ body {
 
 main {
   text-align: center;
-  margin-top: 3%;
+  margin-top: 2%;
+  display: block;
 }
 
 #logo {
@@ -38,16 +39,15 @@ h1 {
 
 #risposte {
   border: 2px rgba(255, 255, 255, 0) solid;
-  width: 40%;
+  width: 49%;
   margin: auto;
-  height: 20em;
+  height: 15em;
 }
 
 .button-container {
   display: inline-block;
   width: 23em;
-  margin: 5px;
-
+  margin: 20px;
   border-radius: 3em;
   border: 5px solid hsla(0, 1%, 100%, 0.8);
   box-shadow: #fff;
@@ -58,7 +58,6 @@ h1 {
   color: #ffffff;
   background-color: hsla(290, 71%, 77%, 0.24);
   border: 3px solid hsla(290, 71%, 77%, 0.171);
-
   border-radius: 55px;
   padding: 2px;
   width: 28em;
