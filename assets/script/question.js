@@ -881,7 +881,7 @@ let questionNumber = 0;
 const answerRandomizer = (array) => {
   for (let i = 0; i < array.length; i++) {
     const randomNum = Math.floor(
-      Math.random() * array[i].incorrect_answers.length
+      Math.random() * (array[i].incorrect_answers.length + 1)
     );
     const incorrectAnswers = array[i].incorrect_answers;
     const currentQuestion = array[i];
