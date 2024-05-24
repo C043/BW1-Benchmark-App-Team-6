@@ -63,7 +63,7 @@ const Result = rate(risposteCorrette, risposteSbagliate)
 console.log(Result)
 
 
-if(Result.correctRate >= 60) {
+if (Result.correctRate >= 60) {
     launchConfetti()
 }
 /* Inserisco i risultati all'interno del mio DOM in percentuale */
@@ -88,7 +88,7 @@ rateDOM(Result)
 
 const textResult = function () {
     const innerDiv = document.querySelector('#inner-chart')
-    if (risposteCorrette >= 6) {
+    if (risposteCorrette > risposteSbagliate) {
         innerDiv.innerHTML = `
     <p class="title-chart">Congratulations!</p>
           <p class="blue">You passed the exam</p>
@@ -101,8 +101,7 @@ const textResult = function () {
           <p class="blue">You better go play minecraft</p>
           <br>
           <p class="description-result">We'll send you the minecraft server <br>in few minutes. <br>Check you email</p>
-    `
-    }
+    `} 
 
 }
 
@@ -114,7 +113,7 @@ textResult()
 /* funzioni da utilizzare */
 
 
-function nextPage () {
+function nextPage() {
     window.location.href = './feedback.html';
 }
 
