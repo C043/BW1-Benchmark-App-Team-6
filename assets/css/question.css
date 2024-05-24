@@ -103,7 +103,7 @@ p {
 #timer {
   position: relative;
   width: 12%;
-  margin-top: 3%;
+  margin-top: 0;
   margin-right: 6%;
   float: right;
 }
