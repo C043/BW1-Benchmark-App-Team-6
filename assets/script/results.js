@@ -2,14 +2,21 @@
 // Recupera userScore dal localStorage
 const userScore = localStorage.getItem('userScore') || 0;
 
+console.log('userScore ------->',userScore)
+
 // Recupera quantitySelected dal localStorage
-const quantitySelected = localStorage.getItem('quantitySelected') || 0;
+const quantitySelected = localStorage.getItem('quantitySelected');
 
-const risposteCorrette = userScore;
+// Recupera le risposte sbagliate
+const wrongAnswers = localStorage.getItem('wrongAnswers')
 
-const risposteSbagliate = quantitySelected - risposteCorrette;
+const risposteCorrette = userScore;  // inserisco le risposte giuste
 
-console.log(risposteCorrette)
+const risposteSbagliate = wrongAnswers;  
+
+console.log('risposte corrette --------->',risposteCorrette)
+
+console.log('risposte sbagliate -------->', risposteSbagliate)
 
 /* creo il grafico */
 
@@ -23,7 +30,7 @@ const data = {
         'correct answers'],
     datasets: [{
         label: 'Answers',
-        data: [risposteSbagliate, risposteCorrette],
+        data: [risposteSbagliate, parseInt(risposteCorrette)],
         backgroundColor: [
             'rgb(245, 48, 48234)',
             'rgb(48, 198, 224)',
@@ -32,6 +39,8 @@ const data = {
         hoverOffset: 4
     }],
 }
+
+console.log(data.datasets[0].data)
 
 const config = {
     type: 'doughnut',
@@ -52,10 +61,13 @@ const myChart = new Chart(ctx, config);
 /* trasformo il risultato in percentuale */
 
 const rate = function (correct, incorrect) {
-    const correctRate = (correct / quantitySelected) * 100
+    const correctRate = (correct / quantitySelected) * 100 
     const incorrectRate = (incorrect / quantitySelected) * 100
+    const correctFixed = correctRate.toFixed(1)
+    const incorrectFixed = incorrectRate.toFixed(1)
+    console.log('correct rate--------->',correctRate,'incorrect rate ----->', incorrectRate)
 
-    return { correctRate: correctRate, incorrectRate: incorrectRate }
+    return { correctRate: correctFixed, incorrectRate: incorrectFixed }
 }
 
 const Result = rate(risposteCorrette, risposteSbagliate)
