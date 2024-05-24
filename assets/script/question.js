@@ -891,21 +891,35 @@ const checkAnswer = (question, answer) => {
     console.log("sbagliato");
   } */
 
+  const answers = document.getElementsByTagName("button");
   if (answer.innerText === question.correct_answer) {
     console.log("Complimenti");
     userScore++;
-    const answerSpace = document.getElementById("risposte");
-    answerSpace.innerHTML = "";
-    answerSpace.innerHTML = "<p>Correct! :)</p>";
+    for (let i = 0; i < answers.length; i++) {
+      const currentButton = answers[i];
+      if (currentButton.innerText === question.correct_answer) {
+        currentButton.classList.add("right");
+        currentButton.classList.remove("button-effect");
+      } else {
+        currentButton.classList.add("wrong");
+        currentButton.classList.remove("button-effect");
+      }
+    }
     console.log(userScore);
 
     // Salva userScore nel localStorage
     localStorage.setItem("userScore", userScore);
   } else {
-    const answerSpace = document.getElementById("risposte");
-    answerSpace.innerHTML = "";
-    answerSpace.innerHTML = "<p>Wrong! :(</p>";
-    console.log("sbagliato");
+    for (let i = 0; i < answers.length; i++) {
+      const currentButton = answers[i];
+      if (currentButton.innerText === question.correct_answer) {
+        currentButton.classList.add("right");
+        currentButton.classList.remove("button-effect");
+      } else {
+        currentButton.classList.add("wrong");
+        currentButton.classList.remove("button-effect");
+      }
+    }
   }
 };
 
@@ -996,6 +1010,7 @@ const questionGen = () => {
       const currentAnswer = questions[questionNumber].incorrect_answers[i];
       const answerBtn = document.createElement("button");
       answerBtn.classList.add("button");
+      answerBtn.classList.add("button-effect");
       const buttonDiv = document.createElement("div");
       buttonDiv.classList.add("button-container");
       answerBtn.innerText = currentAnswer;

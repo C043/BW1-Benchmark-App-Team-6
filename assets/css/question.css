@@ -11,10 +11,9 @@ main {
 }
 
 #logo {
-  padding: 40px 70px;
+  padding: 40px 70px 0px 70px;
   display: inline-block;
   width: 200px;
-  height: 100px;
   margin: 1em;
 }
 
@@ -65,7 +64,7 @@ h1 {
   height: 5em;
 }
 
-.button:hover {
+.button-effect:hover {
   outline-color: transparent;
   outline-style: solid;
   background-color: #d20094;
@@ -139,18 +138,21 @@ p {
   display: inline-block;
   border: 1px solid transparent;
   width: 70%;
+  font-size: 2em;
 }
 
 #container {
   background-color: transparent;
-  border: 1px solid #fff;
-  margin: 5px;
+  margin: 5px auto;
   text-align: center;
-  box-shadow: 1px 1px 20px 5px #00ffff;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
 }
 
 #container #btn {
-  padding: 50px;
+  padding-top: 50px;
+  padding-bottom: 20px;
   text-align: center;
 }
 
@@ -174,21 +176,21 @@ p {
 }
 
 #difficulty-choice {
-  padding: 5px;
+  padding: 1px;
   width: 150px;
   border-radius: 30px;
   background-color: transparent;
   color: #fff;
   font-weight: bold;
   border: 3px solid #fff;
-  box-shadow: 1px 1px 10px 1px #fff;
+  box-shadow: 0 0 5px 0.5px #fff;
   text-align: center;
   font-family: "Outfit", sans-serif;
   cursor: pointer;
 }
 
 #difficulty-choice option {
-  color: #d20094;
+  color: #fcfafb;
   padding: 5px;
   background: #0c103a;
   border: none;
@@ -196,20 +198,28 @@ p {
 
 #quantity-choice {
   width: 100px;
-  padding: 5px;
+  padding: 1px;
   border-radius: 30px;
   background-color: transparent;
   color: #fff;
   font-weight: bold;
   border: 3px solid #fff;
-  box-shadow: 1px 1px 10px 1px #fff;
+  box-shadow: 0 0 5px 0.5px #fff;
   text-align: center;
   font-family: "Outfit", sans-serif;
   cursor: pointer;
 }
 
 #quantity-choice option {
-  color: #d20094;
+  color: #ffffff;
   background: #0c103a;
   padding: 5px;
+}
+
+.right {
+  background-color: green;
+}
+
+.wrong {
+  background-color: red;
 }

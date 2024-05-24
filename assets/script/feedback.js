@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       showValue.innerText = "";
 
       if (selectedRating < 3) {
-        fullContainer.innerHTML = `<p class="feedBack">Mi dispiace</p>`;
+        fullContainer.innerHTML = `<p class="feedBack"></p>`;
       } else if (selectedRating >= 3 && selectedRating < 7) {
         fullContainer.innerHTML = `<p class="feedBack">Speriamo vada meglio la prossima volta</p>`;
       } else if (selectedRating >= 7 && selectedRating <= 10) {
