@@ -100,19 +100,19 @@ rateDOM(Result)
 
 const textResult = function () {
     const innerDiv = document.querySelector('#inner-chart')
-    if (risposteCorrette > risposteSbagliate) {
+    if (userScore > wrongAnswers) {
         innerDiv.innerHTML = `
     <p class="title-chart">Congratulations!</p>
           <p class="blue">You passed the exam</p>
           <br>
-          <p class="description-result">We'll send you the certificate <br>in few minutes. <br>Check you email (including <br>promotions / spam folder)</p>
+          <p class="description-result">We'll send you the certificate <br>in few minutes. <br>Check your e-mail (including <br>promotions / spam folder)</p>
     `
-    } else {
+    } else if (userScore < wrongAnswers){
         innerDiv.innerHTML = `
     <p class="title-chart">Oh crap!</p>
           <p class="blue">You better go play minecraft</p>
           <br>
-          <p class="description-result">We'll send you the minecraft server <br>in few minutes. <br>Check you email</p>
+          <p class="description-result">We'll send you the minecraft server <br>in few minutes. <br>Check your e-mail</p>
     `} 
 
 }
