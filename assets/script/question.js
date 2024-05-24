@@ -663,7 +663,7 @@ const hardQuestions = [
     difficulty: "hard",
     category: "Science: Computers",
     question: "What vulnerability ranked #1 on the OWASP Top 10 in 2013?",
-    correct_answer: "Injection ",
+    correct_answer: "Injection",
     incorrect_answers: [
       "Broken Authentication",
       "Cross-Site Scripting",
