@@ -1,7 +1,12 @@
 body {
+/*  background-image: url(../images/bg.jpg);
+  background-size: cover;
+  place-items: center;*/
   background-image: url(../images/bg.jpg);
   background-size: cover;
-  place-items: center;
+  color: whitesmoke;
+  font-family: "Inter", sans-serif;
+  margin: 3%;
 }
 
 main {
@@ -10,11 +15,12 @@ main {
   display: block;
 }
 
-#logo {
-  padding: 40px 70px 0px 70px;
+.logo {
+  /*padding: 40px 70px 0px 70px;
   display: inline-block;
   width: 200px;
-  margin: 1em;
+  margin: 1em;*/
+  padding: 10px;
 }
 
 img {

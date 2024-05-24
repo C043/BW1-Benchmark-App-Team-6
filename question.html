@@ -1,56 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/reset.css" />
-    <link rel="stylesheet" href="assets/css/question.css" />
-    <!-- font h1 e span -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- font descriptions -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- -------------------------------------------------- -->
-    <title>Question-page</title>
-  </head>
-  <body>
-    <header>
-      <div id="logo"><img src="assets/images/epicode_logo.png" alt="" /></div>
-      <div id="timer"></div>
-    </header>
-    <main>
-      <form action="" id="form">
-        <div id="container">
-          <label for="difficulty">DIFFICULTY LEVEL</label>
-          <select name="difficulty" id="difficulty-choice" required>
-            <option value="easy">EASY</option>
-            <option value="medium">MEDIUM</option>
-            <option value="hard">HARD</option>
-          </select>
-          <label for="quantità">HOW MANY QUESTIONS</label>
-          <select name="quantità" id="quantity-choice" required>
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-            <option value="20">20</option>
-            <option value="25">25</option>
-            <option value="30">30</option>
-          </select>
-          <div id="btn">
-            <button id="difficulty-button">LET'S START!</button>
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/question.css" />
+  <!-- font h1 e span -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+  <!-- font descriptions -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@700&display=swap"
+    rel="stylesheet" />
+  <!-- -------------------------------------------------- -->
+  <title>Question-page</title>
+</head>
+
+<body>
+  <header>
+    <nav class="logo">
+      <a href="https:/www.epicode.com/it/" title="epicode" target="_blank">
+        <img src="./assets/images/epicode_logo.png" alt="epicode-logo" width="150px" />
+      </a>
+    </nav>
+    <div id="timer"></div>
+  </header>
+  <main>
+    <form action="" id="form">
+      <div id="container">
+        <label for="difficulty">DIFFICULTY LEVEL</label>
+        <select name="difficulty" id="difficulty-choice" required>
+          <option value="easy">EASY</option>
+          <option value="medium">MEDIUM</option>
+          <option value="hard">HARD</option>
+        </select>
+        <label for="quantità">HOW MANY QUESTIONS</label>
+        <select name="quantità" id="quantity-choice" required>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+          <option value="30">30</option>
+        </select>
+        <div id="btn">
+          <button id="difficulty-button">LET'S START!</button>
         </div>
-      </form>
-    </main>
-    <script src="assets/script/question.js"></script>
-  </body>
+      </div>
+    </form>
+  </main>
+  <script src="assets/script/question.js"></script>
+</body>
+
 </html>
