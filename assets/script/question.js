@@ -1047,6 +1047,7 @@ const difficultyChoice = (event) => {
     }
     formSpace.remove();
     const main = document.querySelector("main");
+    const script = document.querySelector("script");
     const body = document.querySelector("body");
     const questionSpace = document.createElement("div");
     questionSpace.id = "domande";
@@ -1055,7 +1056,7 @@ const difficultyChoice = (event) => {
     const footer = document.createElement("footer");
     footer.id = "current-question";
     main.append(questionSpace, answerSpace);
-    body.appendChild(footer);
+    body.insertBefore(footer, script);
     timerSpace.innerHTML = `<svg width="100%" height="100%" viewBox="0 0 42 42" class="donut">
     <circle
       class="donut-ring"
@@ -1096,6 +1097,7 @@ const difficultyChoice = (event) => {
     }
     formSpace.remove();
     const main = document.querySelector("main");
+    const script = document.querySelector("script");
     const body = document.querySelector("body");
     const questionSpace = document.createElement("div");
     questionSpace.id = "domande";
@@ -1104,7 +1106,7 @@ const difficultyChoice = (event) => {
     const footer = document.createElement("footer");
     footer.id = "current-question";
     main.append(questionSpace, answerSpace);
-    body.appendChild(footer);
+    body.insertBefore(footer, script);
     timerSpace.innerHTML = `<svg width="100%" height="100%" viewBox="0 0 42 42" class="donut">
     <circle
       class="donut-ring"
@@ -1143,6 +1145,7 @@ const difficultyChoice = (event) => {
     }
     formSpace.remove();
     const main = document.querySelector("main");
+    const script = document.querySelector("script");
     const body = document.querySelector("body");
     const questionSpace = document.createElement("div");
     questionSpace.id = "domande";
@@ -1151,7 +1154,7 @@ const difficultyChoice = (event) => {
     const footer = document.createElement("footer");
     footer.id = "current-question";
     main.append(questionSpace, answerSpace);
-    body.appendChild(footer);
+    body.insertBefore(footer, script);
     timerSpace.innerHTML = `<svg width="100%" height="100%" viewBox="0 0 42 42" class="donut">
     <circle
       class="donut-ring"
