@@ -859,21 +859,26 @@ const hardQuestions = [
   },
 ];
 
+// Funzione che toglie event listener
 const off = (el, evt, fn, opts = false) =>
   el.removeEventListener(evt, fn, opts);
 
+// Array delle domande selezionate
 const questions = [];
 
+// Numero di risposte giuste
 let userScore = 0;
 localStorage.setItem("userScore", userScore);
 
+// Numero di risposte sbagliate
 let wrongAnswerCounter = 0;
 localStorage.setItem("wrongAnswers", wrongAnswerCounter);
 
+// Numero della domanda corrente
 let questionNumber = 0;
 
+// Funzione che randomizza la posizione delle risposte
 const answerRandomizer = (array) => {
-  console.log(array);
   for (let i = 0; i < array.length; i++) {
     const randomNum = Math.floor(
       Math.random() * array[i].incorrect_answers.length
@@ -889,10 +894,10 @@ const answerRandomizer = (array) => {
   }
 };
 
+// Funzione che controlla se la risposta data è giusta o sbagliata
 const checkAnswer = (question, answer) => {
   const answers = document.getElementsByTagName("button");
   if (answer.innerText === question.correct_answer) {
-    console.log("Complimenti");
     userScore++;
     for (let i = 0; i < answers.length; i++) {
       const currentButton = answers[i];
@@ -904,8 +909,6 @@ const checkAnswer = (question, answer) => {
         currentButton.classList.remove("button-effect");
       }
     }
-    console.log(userScore);
-
     // Salva userScore nel localStorage
     localStorage.setItem("userScore", userScore);
   } else {
@@ -924,6 +927,7 @@ const checkAnswer = (question, answer) => {
   }
 };
 
+// Funzione che resetta l'animazione del timer
 const timer = () => {
   const timerCircle = document.getElementById("timer-circle");
   timerCircle.style.animationName = "none";
@@ -932,9 +936,10 @@ const timer = () => {
   }, 1000);
 };
 
-let second = 60;
+let second = 0;
 let interval = setInterval(() => {}, 1000);
 
+// Funzione che resetta i secondi che passano
 const counter = () => {
   clearInterval(interval);
   if (questionNumber < questions.length) {
@@ -962,6 +967,7 @@ const counter = () => {
   }, 1000);
 };
 
+// Funzione che mostra i secondi rimanenti nel timer
 const innerTimer = () => {
   const innerTimerSpace = document.getElementById("inner-timer");
   innerTimerSpace.innerHTML = `<p>
@@ -971,23 +977,27 @@ const innerTimer = () => {
 </p>`;
 };
 
-const stopEventHandler = () => {
+const pausa = () => {
   questionGen();
   counter();
 };
 
+// Funzione che gestisce tutto quello che succede quando si clicca una risposta
 const eventHandler = (event) => {
   const answer = event.target;
   const currentQuestion = questions[questionNumber - 1];
+  // Rimuove l'event listener per impedire che si invochi più volte questa funzione
   off(answer, "click", eventHandler);
   checkAnswer(currentQuestion, answer);
   counter();
-  setTimeout(stopEventHandler, 1000);
+  // Pausa per mostrare le risposte giuste e quelle sbagliate
+  setTimeout(pausa, 1000);
   counter();
   innerTimer();
   timer();
 };
 
+// Funzione che gestisce tutto quello che succede quando non si risponde
 const timeOut = () => {
   wrongAnswerCounter++;
   localStorage.setItem("wrongAnswers", wrongAnswerCounter);
@@ -995,6 +1005,7 @@ const timeOut = () => {
   const answers = document.getElementsByTagName("button");
   for (let i = 0; i < answers.length; i++) {
     const currentButton = answers[i];
+    off(currentButton, "click", eventHandler);
     if (currentButton.innerText === currentQuestion.correct_answer) {
       currentButton.classList.add("right");
       currentButton.classList.remove("button-effect");
@@ -1009,6 +1020,7 @@ const timeOut = () => {
   innerTimer();
 };
 
+// Funzione che genera le domande e le risposte in sequenza
 const questionGen = () => {
   if (questionNumber < questions.length) {
     const questionSpace = document.getElementById("domande");
@@ -1049,6 +1061,7 @@ const questionGen = () => {
   }
 };
 
+// Funzione che prende gli input dal form e regola il resto in base alla difficoltà e alla quantità
 const difficultyChoice = (event) => {
   event.preventDefault();
   const timerSpace = document.getElementById("timer");
