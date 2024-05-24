@@ -227,3 +227,7 @@ p {
 .wrong {
   background-color: red;
 }
+
+#current-question p span {
+  color: #d20094;
+}
