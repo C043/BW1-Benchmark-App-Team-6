@@ -23,11 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
       showValue.innerText = "";
 
       if (selectedRating < 3) {
-        fullContainer.innerHTML = `<p class="feedBack">We're sorry</p>`;
+        fullContainer.innerHTML = `<p class="feedBack">I appreciate your feedback. I accept responsibility for it and will ensure it does not recur.</p>`;
       } else if (selectedRating >= 3 && selectedRating < 7) {
-        fullContainer.innerHTML = `<p class="feedBack">Speriamo vada meglio la prossima volta</p>`;
+        fullContainer.innerHTML = `<p class="feedBack">Your feedback helps me to improve my work performance and avoid such mistakes in the future.</p>`;
       } else if (selectedRating >= 7 && selectedRating <= 10) {
-        fullContainer.innerHTML = `<p class="feedBack">Grazie per il feedback</p>`;
+        fullContainer.innerHTML = `<p class="feedBack">Thank you for the feedback, I try to give my best every time.</p>`;
       }
     }
   });
