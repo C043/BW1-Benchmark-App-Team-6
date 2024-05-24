@@ -1003,8 +1003,10 @@ const timeOut = () => {
   localStorage.setItem("wrongAnswers", wrongAnswerCounter);
   const currentQuestion = questions[questionNumber - 1];
   const answers = document.getElementsByTagName("button");
+  // Cicla le risposte e mostra comunque quelle sbagliate e quella giusta
   for (let i = 0; i < answers.length; i++) {
     const currentButton = answers[i];
+    // Rimuove l'event listener dalle risposte
     off(currentButton, "click", eventHandler);
     if (currentButton.innerText === currentQuestion.correct_answer) {
       currentButton.classList.add("right");
@@ -1014,7 +1016,7 @@ const timeOut = () => {
       currentButton.classList.remove("button-effect");
     }
   }
-  setTimeout(stopEventHandler, 1000);
+  setTimeout(pausa, 1000);
   timer();
   counter();
   innerTimer();
@@ -1022,6 +1024,7 @@ const timeOut = () => {
 
 // Funzione che genera le domande e le risposte in sequenza
 const questionGen = () => {
+  // Se le domande non sono finite mostra la domanda dopo
   if (questionNumber < questions.length) {
     const questionSpace = document.getElementById("domande");
     const answerSpace = document.getElementById("risposte");
@@ -1056,6 +1059,7 @@ const questionGen = () => {
     p.appendChild(pSpan);
     currentQuestionSpace.appendChild(p);
     questionNumber++;
+    // Se le domande sono finite allora va alla pagina dei risultati
   } else {
     location.replace("results.html");
   }
