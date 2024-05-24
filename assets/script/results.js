@@ -123,7 +123,7 @@ function nextPage () {
 function launchConfetti() {
     const duration = 5 * 1000;
     const end = Date.now() + duration;
-    const colors = ['#bb0000', '#ffffff'];
+    const colors = ['#00ffff', '#d20094'];
 
     (function frame() {
         confetti({
