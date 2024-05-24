@@ -1,5 +1,5 @@
 body {
-    /*    margin: 0 4em;
+  /*    margin: 0 4em;
     font-family: Arial, Helvetica, sans-serif;
     background-image: url(../images/bg.jpg);
     background-repeat: no-repeat;
@@ -16,20 +16,20 @@ body {
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 h1 {
-    font-size: 5vw;
-    font-weight: bold;
+  font-size: 5vw;
+  font-weight: bold;
 }
 
 h3 {
-    font-size: 1.8vw;
+  font-size: 1.8vw;
 }
 
 strong {
-    font-size: 7vw;
+  font-size: 7vw;
 }
 
 .title-chart {
@@ -39,9 +39,9 @@ strong {
 }
 
 .blue {
-    color: aqua;
-    font-size: 1.3vw;
-    font-weight: bold;
+  color: aqua;
+  font-size: 1.3vw;
+  font-weight: bold;
 }
 
 .description-result {
@@ -49,9 +49,8 @@ strong {
 }
 
 .result-questions {
-    font-size: 1.5vw;
-    color: rgba(255, 255, 255, 0.473);
-
+  font-size: 1.5vw;
+  color: rgba(255, 255, 255, 0.473);
 }
 
 header {
@@ -68,8 +67,8 @@ header {
 }
 
 main {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 /* .chart-div {
@@ -89,40 +88,39 @@ main {
 }
 
 #inner-chart {
-    /* border: 1px solid white; */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20vw;
-    height: 20vw;
+  /* border: 1px solid white; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20vw;
+  height: 20vw;
 }
 
 #correctDiv {
-    width: 100%;
-    /* border: 1px solid white; */
-    padding: 2em;
-    text-align: left;
+  width: 100%;
+  /* border: 1px solid white; */
+  padding: 2em;
+  text-align: left;
 }
 
 .correct-content {
-    /* border: 1px solid white; */
-    width: 20vw;
-    margin: 5em auto;
-
+  /* border: 1px solid white; */
+  width: 20vw;
+  margin: 5em auto;
 }
 
 #wrongDiv {
-    width: 100%;
-    /* border: 1px solid white; */
-    padding: 2em;
+  width: 100%;
+  /* border: 1px solid white; */
+  padding: 2em;
 }
 
 .wrong-content {
-    text-align: right;
-    width: 20vw;
-    margin: 5em auto;
-    /* border: 1px solid white; */
+  text-align: right;
+  width: 20vw;
+  margin: 5em auto;
+  /* border: 1px solid white; */
 }
 
 button {
@@ -137,7 +135,7 @@ button {
 }
 
 button:hover {
-    background-color: hsla(173, 100%, 54%, 0.719);
-    box-shadow: 0px 1px 48px 8px hsl(173, 100%, 54%);
-    cursor: pointer;
+  background-color: hsla(173, 100%, 54%, 0.719);
+  box-shadow: 0px 1px 48px 8px hsl(173, 100%, 54%);
+  cursor: pointer;
 }

@@ -50,7 +50,7 @@ h1 {
 
 .button-container {
   display: inline-block;
-  width: 23em;
+  width: 20.01vw;
   margin: 20px;
   border-radius: 3em;
   border: 5px solid hsla(0, 1%, 100%, 0.8);
@@ -64,9 +64,9 @@ h1 {
   border: 3px solid hsla(290, 71%, 77%, 0.171);
   border-radius: 55px;
   padding: 2px;
-  width: 28em;
-  cursor: pointer;
+  width: 20vw;
   height: 5em;
+  cursor: pointer;
 }
 
 .button-effect:hover {
@@ -86,7 +86,6 @@ footer {
 #inner-timer p {
   font-size: 1vw;
 }
-
 p {
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
@@ -221,9 +220,13 @@ p {
 }
 
 .right {
-  background-color: green;
+  background-color: #00ffffa9;
 }
-
+/*rgba(0, 128, 0, 0.726)*/
 .wrong {
-  background-color: red;
+  background-color: #d20093a1;
+}
+/*rgba(255, 0, 0, 0.568)*/
+#current-question p span {
+  color: #d20094;
 }
