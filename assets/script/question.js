@@ -862,6 +862,7 @@ const hardQuestions = [
 const questions = [];
 
 let userScore = 0;
+localStorage.setItem("userScore", userScore);
 
 let wrongAnswerCounter = 0;
 
