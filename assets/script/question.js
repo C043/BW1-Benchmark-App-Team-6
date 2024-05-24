@@ -859,6 +859,9 @@ const hardQuestions = [
   },
 ];
 
+const off = (el, evt, fn, opts = false) =>
+  el.removeEventListener(evt, fn, opts);
+
 const questions = [];
 
 let userScore = 0;
@@ -973,8 +976,9 @@ const stopEventHandler = () => {
 };
 
 const eventHandler = (event) => {
-  const currentQuestion = questions[questionNumber - 1];
   const answer = event.target;
+  const currentQuestion = questions[questionNumber - 1];
+  off(answer, "click", eventHandler);
   checkAnswer(currentQuestion, answer);
   counter();
   setTimeout(stopEventHandler, 1000);
