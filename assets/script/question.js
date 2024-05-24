@@ -1099,6 +1099,8 @@ const difficultyChoice = (event) => {
       fill="transparent"
       stroke="#d2d3d4"
       stroke-width="3"
+      style=" -webkit-filter: drop-shadow( 1.5px 1.5px 1px rgba(0, 0, 0, .5));
+      filter: drop-shadow( 1.5px 1.5px 1px rgba(0, 0, 0, .5));"
     ></circle>
 
     <circle
@@ -1149,6 +1151,8 @@ const difficultyChoice = (event) => {
       fill="transparent"
       stroke="#d2d3d4"
       stroke-width="3"
+      style=" -webkit-filter: drop-shadow( 1.5px 1.5px 1px rgba(0, 0, 0, .5));
+      filter: drop-shadow( 1.5px 1.5px 1px rgba(0, 0, 0, .5));"
     ></circle>
 
     <circle
@@ -1197,6 +1201,8 @@ const difficultyChoice = (event) => {
       fill="transparent"
       stroke="#d2d3d4"
       stroke-width="3"
+      style=" -webkit-filter: drop-shadow( 1.5px 1.5px 1px rgba(0, 0, 0, .5));
+      filter: drop-shadow( 1.5px 1.5px 1px rgba(0, 0, 0, .5));"
     ></circle>
 
     <circle
