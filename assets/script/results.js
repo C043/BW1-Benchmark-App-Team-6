@@ -95,21 +95,13 @@ const textResult = function () {
           <br>
           <p class="description-result">We'll send you the certificate <br>in few minutes. <br>Check you email (including <br>promotions / spam folder)</p>
     `
-    } else if (risposteCorrette < risposteSbagliate) {
+    } else {
         innerDiv.innerHTML = `
     <p class="title-chart">Oh crap!</p>
           <p class="blue">You better go play minecraft</p>
           <br>
           <p class="description-result">We'll send you the minecraft server <br>in few minutes. <br>Check you email</p>
-    `
-    } else if (risposteCorrette === risposteSbagliate) {
-        innerDiv.innerHTML = `
-    <p class="title-chart">Oh crap!</p>
-          <p class="blue">you almost did!!!</p>
-          <br>
-          <p class="description-result">We'll send you some alcohol for your depression post exam<br>in few minutes. <br>Check you email</p>
-    `
-    }
+    `} 
 
 }
 
