@@ -12,7 +12,7 @@ const wrongAnswers = localStorage.getItem('wrongAnswers')
 
 const risposteCorrette = userScore;  // inserisco le risposte giuste
 
-const risposteSbagliate = quantitySelected - risposteCorrette;  
+const risposteSbagliate = wrongAnswers;  
 
 console.log('risposte corrette --------->',risposteCorrette)
 
